@@ -1,0 +1,44 @@
+/* ----------------- main  ---------------------- */
+.main
+  padding-top: 30px
+  background-color: #f5f5f5
+
+.main-slider
+  position: relative
+  overflow: hidden
+
+.main-slider:hover .main-slider-arrows
+  opacity: 1
+
+.main-slider-arrows
+  position: absolute
+  cursor: pointer
+  width: 35px
+  height: 35px
+  background-color: #fff
+  color: #666
+  top: 50%
+  transform: translateY(-50%)
+  transition: all .2s
+  opacity: 0
+
+.main-slider-arrows:hover
+  background-color: #ed8b5c
+.main-slider-arrows .fa-angle-left:before
+  content: "\f104"
+
+.main-slider-arrows .fa-angle-right:before
+  content: "\f105"
+
+.main-slider-arrows:nth-child(1)
+  left: 10px
+
+.main-slider-arrows:nth-child(2)
+  right: 10px
+
+.main-slider-items-wrapper
+  display: flex
+  flex-direction: row
+  width: 3510px
+
+//.main-slider .main-slider-item

@@ -1,0 +1,120 @@
+.main-footer
+  background-color: $footer-bg
+  color: $grey
+  font: 13px ArialMT, sans-serif
+  padding-top: 45px
+  h4
+    @extend %h4-footer
+    color: $white
+    text-transform: uppercase
+    line-height: 1
+    margin-bottom: 16px
+  li
+    padding: 9px 0
+    padding-left: 14px
+    border-bottom: 1px solid #3D3D3D
+    a
+      cursor: pointer
+      transition: all .3s
+    a:hover
+      color: $orange
+    .fa-caret-right
+      position: relative
+    .fa-caret-right:before
+      content: "\f0da"
+      position: absolute
+      top: -11px
+      left: -13px
+  .social-icons-footer
+    padding-top: 20px
+    display: flex
+    a
+      width: 30px
+      height: 30px
+      background-color: $icon-bg
+      border-radius: 50%
+      margin-right: 5px
+      font-size: $contact-icon-fsz
+      color: $white
+      font-family: FontAwesome
+      transition: all .3s
+      @extend %flex-center
+    a:nth-last-child(1)
+      margin-right: 0
+    .facebook:before
+      content: "\f09a"
+    .twitter:before
+      content: "\f099"
+    .rss:before
+      content: "\f09e"
+    .youtube:before
+      content: "\f167"
+    .googleplus:before
+      content: "\f0d5"
+    .pinterest:before
+      content: "\f0d2"
+    .facebook:hover
+      background-color: #3E4F62
+    .twitter:hover
+      background-color: #00ACEE
+    .rss:hover
+      background-color: #EE802F
+    .youtube:hover
+      background-color: #D62423
+    .googleplus:hover
+      background-color: #DD4B39
+    .pinterest:hover
+      background-color: #366184
+
+  .newsletter
+    p
+      margin-bottom: 15px
+    input
+      height: 40px
+      background-color: $icon-bg
+      margin-bottom: 15px
+      padding: 0 15px
+      outline: 1px solid transparent
+    input:focus
+      outline: 1px solid mediumslateblue
+    .reg-btn
+      @extend %button
+      width: 120px
+      transition: all .3s
+    .reg-btn:hover
+      background-color: #000000
+  .adresses-footer
+    .contact-item-foot
+      display: flex
+    p
+      padding-left: 10px
+      margin-bottom: 0
+      display: flex
+      justify-content: center
+      align-items: center
+    //  position: relative
+    .contact-icon
+      margin: 10px 0
+      flex-shrink: 0
+      width: 40px
+      height: 40px
+      border: 1px solid $white
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+    .logo-link
+      padding: 0
+      margin-bottom: 18px
+    .fa
+      font-size: $contact-icon-fsz
+      color: $white
+    .fa-map-marker:before
+      content: "\f041"
+    .fa-phone:before
+      content: "\f095"
+    .fa-envelope:before
+      content: "\f0e0"
+  .sub-footer
+    background-color: $subfooter-bg
+    padding: 16px 0
