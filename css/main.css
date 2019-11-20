@@ -398,60 +398,46 @@ nav {
   background-color: #f5f5f5;
 }
 
-.main-slider {
-  position: relative;
-  overflow: hidden;
+
+/*main slider*/
+.space-slider {
+  height: 30px;
 }
 
-.main-slider:hover .main-slider-arrows {
-  opacity: 1;
+.hide{
+  display: none;
 }
-
-.main-slider-arrows {
-  position: absolute;
-  cursor: pointer;
+.button-square{
   width: 35px;
   height: 35px;
-  background-color: #fff;
-  color: #666;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  opacity: 0;
+  background: white;
+  transition: 0.5s;
 }
 
-.main-slider-arrows:hover {
-  background-color: #ed8b5c;
+.button-square:hover {
+  background: #ee802f;
 }
 
-.main-slider-arrows .fa-angle-left:before {
-  content: "";
+.control-slider-icon {
+  position: relative;
+  top: 7px;
 }
+/*.carousel-control-prev-icon {*/
+/*  background-image: url("/images/main-page/main-slider/next1.png");*/
+/*}*/
 
-.main-slider-arrows .fa-angle-right:before {
-  content: "";
-}
 
-.main-slider-arrows:nth-child(1) {
-  left: 10px;
+.carousel-control-prev-btn-right{
+  position: absolute;
+  left: -10px;
 }
+.carousel-control-prev-btn-left{
+  position: absolute;
+  right: -10px;
+}
+/*end main slider*/
 
-.main-slider-arrows:nth-child(2) {
-  right: 10px;
-}
 
-.main-slider-items-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 3510px;
-}
 
 .main-footer {
   background-color: #333333;
@@ -622,5 +608,7 @@ nav {
   background-color: #222222;
   padding: 16px 0;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */
