@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Phones",
+    "key": "phones",
+    "icon": "fa-mobile"
+  },
+  {
+    "name": "Watches",
+    "key": "watches",
+    "icon": "fa-gears"
+  },
+  {
+    "name": "Headphones",
+    "key": "headphones",
+    "icon": "fa-shekel"
+  },
+  {
+    "name": "Laptops",
+    "key": "laptops",
+    "icon": "fa-laptop"
+  }
+]

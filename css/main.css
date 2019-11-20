@@ -238,6 +238,22 @@ nav {
   content: "";
 }
 
+.fa-mobile:before {
+  content: "";
+}
+
+.fa-gears:before {
+  content: "";
+}
+
+.fa-shekel:before {
+  content: "";
+}
+
+.fa-laptop:before {
+  content: "";
+}
+
 .header-top .help_ .help_1 {
   display: inline-block;
   color: #666;
@@ -250,18 +266,21 @@ nav {
   position: relative;
   width: 100%;
 }
+.header_menu .menu-wrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
 /* menu */
 .v-megamenu-container {
   display: block;
   padding-right: 0;
   padding-left: 0;
-  /*max-width: 270px */
   position: relative;
   z-index: 99;
 }
 
-/*height: 50px */
 .v-megamenu-container:hover .v-megamenu {
   display: block;
 }
@@ -299,11 +318,16 @@ nav {
 
 .v-megamenu {
   position: absolute;
+  color: #999999;
   width: 100%;
   display: none;
   padding-top: 10px;
   background: #fff;
   cursor: pointer;
+}
+.v-megamenu .fa {
+  width: 10px;
+  margin-right: 15px;
 }
 
 .menu-title {
@@ -314,6 +338,7 @@ nav {
   padding: 8px 15px 8px 20px;
   text-decoration: none;
   color: #666;
+  position: relative;
 }
 
 .menu-title:hover {

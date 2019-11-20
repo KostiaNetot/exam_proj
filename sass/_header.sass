@@ -118,6 +118,15 @@ nav
 .fa-phone:before
   content: "\f095"
 
+.fa-mobile:before
+  content: "\f10b"
+.fa-gears:before
+  content: "\f085"
+.fa-shekel:before
+  content: "\f20b"
+.fa-laptop:before
+  content: "\f109"
+
 .header-top .help_ .help_1
   display: inline-block
   color: #666
@@ -128,6 +137,8 @@ nav
   background: #333
   position: relative
   width: 100%
+  .menu-wrapper
+    justify-content: space-between
 
 /* menu */
 
@@ -135,10 +146,8 @@ nav
   display: block
   padding-right: 0
   padding-left: 0
-  /*max-width: 270px*/
   position: relative
   z-index: 99
-/*height: 50px*/
 
 .v-megamenu-container:hover .v-megamenu
   display: block
@@ -168,11 +177,15 @@ nav
 
 .v-megamenu
   position: absolute
+  color: $grey
   width: 100%
   display: none
   padding-top: 10px
   background: #fff
   cursor: pointer
+  .fa
+    width: 10px
+    margin-right: 15px
 
 .menu-title
   display: block
@@ -182,6 +195,7 @@ nav
   padding: 8px 15px 8px 20px
   text-decoration: none
   color: #666
+  position: relative
 
 .menu-title:hover
   color: #ed8b5c
