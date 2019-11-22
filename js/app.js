@@ -1,5 +1,7 @@
 'use strict';
 
 let categoriesData;
-setData();
+let productsData;
 
+setCategData();
+setProductsData();

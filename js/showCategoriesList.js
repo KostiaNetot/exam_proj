@@ -1,6 +1,6 @@
 'use strict';
 
-const setData = () => {
+const setCategData = () => {
   let dataPromise = new Promise((resolve, reject) => {
     fetch('categories.json')
       .then(data => {
@@ -9,18 +9,14 @@ const setData = () => {
   });
   dataPromise.then(data => {
     categoriesData = JSON.parse(data);
-    // createCategList(categoriesData);
     getValuesFormCategs(categoriesData);
   });
 };
 
-// const createCategList = (data) => {
-//   $('.v-megamenu').html('<div class="menu-title">Link 1</div>');
-// };
-
 const getValuesFormCategs = (data) => {
   for (let item of data) {
     createCategListItem(item['name'], item['key'], item['icon']);
+    showNewProductsSections(item['name'], item['key'], item['border-col']);
   }
 };
 

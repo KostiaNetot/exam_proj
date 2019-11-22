@@ -1,0 +1,83 @@
+section
+  margin-bottom: 30px
+section.new-products
+  margin-top: 30px
+  overflow: hidden
+  background-color: $white
+  .new-products-header
+    padding: 10px 0
+    //border-top: 2px solid #ed8b5c
+    border-bottom: 1px solid lightgrey
+    position: relative
+    h4
+      font: 16px Oswald, sans-serif
+      text-transform: uppercase
+      padding-left: 20px
+      margin: 0
+    .products-arrow
+      width: 25px
+      height: 25px
+      position: absolute
+      top: 8px
+      background-color: #ececec
+      transition: all .3s
+      cursor: pointer
+      &:hover
+        background-color: #ed8b5c
+    .products-arrow:before
+      width: 8px
+      height: 8px
+      position: absolute
+      content: ''
+      display: block
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) rotate(45deg)
+    .products-arrow-left
+      right: 45px
+    .products-arrow-left:before
+      border-left: 1px solid #000000
+      border-bottom: 1px solid #000000
+    .products-arrow-right
+      right: 10px
+    .products-arrow-right:before
+      border-top: 1px solid #000000
+      border-right: 1px solid #000000
+  .new-products-items-wrapper
+    /* width: 2000px; */
+    margin: 0
+    padding: 20px
+    transition: all .3s
+
+//-------Product Item--------
+section.new-products .new-products-item
+  margin-bottom: 15px
+  .top-side
+    display: flex
+  .item-img-wrapper
+    width: 148px
+    height: 148px
+    border: 1px solid lightgrey
+    margin-bottom: 10px
+    position: relative
+    img
+      object-fit: cover
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      transition: all .3s
+  .item-text-wrapper
+    padding: 25px 10px
+    width: 140px
+  h5
+    font-size: 13px
+    color: #444444
+  .item-price
+    font-size: 14px
+    font-family: Oswald, sans-serif
+    color: #ed8b5c
+  .quick-view-item
+    color: #ffffff
+    font-size: 13px
+    background-color: #ed8b5c
+    padding: 6px 12px

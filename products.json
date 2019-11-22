@@ -217,7 +217,7 @@
     "images": ["images/hp15laptop/11.jpg","images/hp15laptop/12.jpg", "images/hp15laptop/13.jpg"],
     "groups": "hp-laptop15",
     "color": "black",
-    "category": "laptop"
+    "category": "laptops"
     },
     {
     "id": "2068832107",
@@ -227,7 +227,7 @@
     "images": ["images/asusChromebookC425/11.jpg","images/asusChromebookC425/12.jpg", "images/asusChromebookC425/13.jpg"],
     "groups": "asus-chromebook",
     "color": "silver",
-    "category": "laptop"
+    "category": "laptops"
     },
     {
     "id": "2347838871",
@@ -237,7 +237,7 @@
     "images": ["images/macBookPro13/11.jpg","images/macBookPro13/12.jpg", "images/macBookPro13/13.jpg"],
     "groups": "macBookpro13",
     "color": "gray",
-    "category": "laptop"
+    "category": "laptops"
     },
     {
     "id": "6672321015",
@@ -247,7 +247,7 @@
     "images": ["images/macBookAir13/11.jpg","images/macBookAir13/12.jpg", "images/macBookAir13/13.jpg"],
     "groups": "macBookair13",
     "color": "silver",
-    "category": "laptop"
+    "category": "laptops"
     },
     {
     "id": "9348457762",
@@ -257,7 +257,7 @@
     "images": ["images/acerAspire5/11.jpg","images/acerAspire5/12.jpg", "images/acerAspire5/13.jpg"],
     "groups": "acer-aspire515",
     "color": "silver",
-    "category": "laptop"
+    "category": "laptops"
     },
     {
     "id": "1237634946",
@@ -267,6 +267,6 @@
     "images": ["images/acerAspire5/11.jpg","images/acerAspire5/12.jpg", "images/acerAspire5/13.jpg"],
     "groups": "asus-vivo15",
     "color": "black",
-    "category": "laptop"
+    "category": "laptops"
     }
 ]
