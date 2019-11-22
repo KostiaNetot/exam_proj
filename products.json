@@ -1,0 +1,272 @@
+﻿[
+    {
+    "id": "6001351434",
+    "name": "Samsung Galaxy Note 10+ Plus 256GB Black",
+    "description": "Quad Rear Camera - 16MP (Ultra wide) + 12MP (Dual Aperture - F 1.5/2.4)+ 12MP (Telephoto) + ToF (DepthVision Camera) with Flash | 10MP front camera; 17.16 centimeters (6.8-inch) Dynamic AMOLED Infinity O Display  with QHD+ resolution 3040 X 1440 (498 ppi), HDR10+ Certified; Memory, Storage & SIM: 12GB RAM | 256GB internal memory expandable up to 1TB | Dual SIM dual-standby (4G+4G) - Hybrid Sim slot; Android Pie v9.0 operating system with 2.7GHz Exynos 9825 octa core processor, S Pen Support: Yes (Gesture/Remote Control); 4300mAH lithium-ion battery | Fast charging with 25W charger (included in the box)",
+    "price": "989.99",
+    "images": ["images/samsung10note/11.jpg","images/samsung10note/12.jpg","images/samsung10note/13.jpg"],
+    "groups": "samsung-galaxyNote10Plus256",
+    "color": "black",
+    "category": "phones"
+    },
+    {
+    "id": "6383349997",
+    "name": "Samsung Galaxy A70 128GB Black",
+    "description": "64+5+8MP triple rear camera with f1.8, f2.2 wide angle and f2.2 with flash | 32MP front camera with f2.0; 17.03 centimeters (6.7-inch) FHD+ multi-touch capacitive touchscreen with 1080 x 2400 pixels resolution | 16M color support; Memory, Storage & SIM: 6GB RAM | 128GB internal memory expandable up to 512GB | Dual SIM (nano+nano) dual-standby (4G+4G); Android Pie v9.0 operating system with 2.7GHz Qualcomm SM6150 octa core processor; 4500mAH lithium-ion battery with type-c fast charging | 25W charger in the box",
+    "price": "349.98",
+    "images": ["images/samsunga10/11.jpg","images/samsunga10/12.jpg"],
+    "groups": "samsung-galaxyA70128",
+    "color": "black",
+    "category": "phones"
+    },
+    {
+    "id": "8582956006",
+    "name": "Google Pixel 4 XL 128GB Just Black",
+    "description": "Point and shoot for the perfect photo. Capture brilliant color and control the exposure balance of different parts of your photos. Get the shot without the flash. Night Sight is now faster and easier to use it can even take photos of the Milky Way. Get more done with your voice. The new Google Assistant is the easiest way to send texts, share photos, and more.; A new way to control your phone. Quick Gestures let you skip songs and silence calls – just by waving your hand above the screen.",
+    "price": "999.00",
+    "images": ["images/pixel4black/11.jpg","images/pixel4black/12.jpg","images/pixel4black/13.jpg"],
+    "groups": "google-pixel4XL128",
+    "color": "black",
+    "category": "phones"
+    },
+    {
+    "id": "3212285782",
+    "name": "Google Pixel 4 XL 128GB Clearly White",
+    "description": "Point and shoot for the perfect photo. Capture brilliant color and control the exposure balance of different parts of your photos. Get the shot without the flash. Night Sight is now faster and easier to use it can even take photos of the Milky Way. Get more done with your voice. The new Google Assistant is the easiest way to send texts, share photos, and more.; A new way to control your phone. Quick Gestures let you skip songs and silence calls – just by waving your hand above the screen.",
+    "price": "999.00",
+    "images": ["images/pixel4white/11.jpg","images/pixel4white/12.jpg","images/pixel4white/13.jpg"],
+    "groups": "google-pixel4XL128",
+    "color": "white",
+    "category": "phones"
+    },
+    {
+    "id": "9600168258",
+    "name": "OnePlus 7 Pro 256GB Nebula Blue",
+    "description": "Rear Camera - 48MP (Primary) + 8MP (Tele-photo)+16MP (Ultrawide) | Front Camera - 16 MP POP-UP Camera; 16.9 centimeters (6.67-inch) multi-touch capacitive touchscreen with 3120 x 1440 pixels resolution; Memory, Storage and SIM: 12GB RAM | 256GB internal memory | Dual SIM dual-standby (4G+4G); Android Oxygen operating system with 2.84GHz Snapdragon 855 octa core processor; 4000mAH lithium-ion battery",
+    "price": "949.00",
+    "images": ["images/oneplus7pro/11.jpg","images/oneplus7pro/12.jpg","images/oneplus7pro/13.jpg"],
+    "groups": "oneplus-7Pro256",
+    "color": "blue",
+    "category": "phones"
+    },
+    {
+    "id": "6294331677",
+    "name": "Samsung Galaxy Fold 512GB Cosmos Black",
+    "description": "7.3 inches, Dynamic AMOLED capacitive touchscreen, 16M colors, 1536 x 2152 pixels | 4.6 Cover display, Super AMOLED, 720 x 1680 pixels (21:9); 512GB Storage, 12GB RAM, No Card slot , Android 9.0 (Pie), Qalcomm SDM855 Snapdragon 855 (7 nm), Octa-core (1x2.84 GHz Kryo 485 & 3x2.42 GHz Kryo 485 & 4x1.78 GHz Kryo 485), Adreno 640; Triple Primary Camera : 12 MP, f/1.5-2.4, 27mm (wide), 12 MP, f/2.4, 52mm (telephoto), 16 MP, f/2.2, 12mm (ultrawide) | LED flash, HDR, panorama | Video 2160p@60fps, 1080p@60/240fps (gyro-EIS), 720p@960fps (gyro-EIS), HDR10 | Dual Front Camera : 10 MP, f/2.2, 26mm (wide), 8 MP, f/1.9 | Cover camera : 10 MP, f/2.2, 26mm (wide), 1.22µm, HDR, Video 2160p@30fps, 1080p@30fps, gyro-EIS Wi-Fi 802.11 a/b/g/n/ac/ax, dual-band, Wi-Fi Direct, hotspot | Bluetooth v5.0, A2DP, LE, aptX HD | GPS with A-GPS, GLONASS, GALILEO, BDS | NFC | USB 3.1 Type-C 1.0 reversible connector",
+    "price": "2299.99",
+    "images": ["images/samsungfold/11.jpg","images/samsungfold/12.jpg","images/samsungfold/13.jpg","images/samsungfold/14.jpg","images/samsungfold/15.jpg"],
+    "groups": "samsung-fold512",
+    "color": "black",
+    "category": "phones"
+    },
+    {
+    "id": "2790836702",
+    "name": "Huawei P30 Pro 512GB Amber Sunrise",
+    "description": "6.47 OLED | 7nm Kirin 980 chipset with EMUI 9.1 | 8GB + 512 GB | 4200 mAh with HUAWEI SuperCharge and Reserve Charge | IP68 water and dust resistant | HUAWEI Acoustic Display Technology instead of traditional top-front speaker; The Leica Quad super camera system includes a SuperZoom Lens, a 40 MP Super Sensing Camera, a 20 MP Ultra Wide Angle Lens, and a HUAWEI TOF Camera, giving you the freedom to capture your incredible moments. Stunning selfies will be produced from the 32MP front camera. Up to 50x Zoom",
+    "price": "1999.00",
+    "images": ["images/huaweip30/11.jpg","images/huaweip30/12.jpg","images/huaweip30/13.jpg","images/huaweip30/14.jpg"],
+    "groups": "huawei-p3Pro512",
+    "color": "orange",
+    "category": "phones"
+    },
+    {
+    "id": "6184428860",
+    "name": "Apple iPhone 11 Pro 256GB Space Gray",
+    "description": "5.8-inch Super Retina XDR OLED display; Water and dust resistant (4 meters for up to 30 minutes, IP68); Triple-camera system with 12MP Ultra Wide, Wide, and Telephoto cameras; Night mode, Portrait mode, and 4K video up to 60fps; 12MP TrueDepth front camera with Portrait mode, 4K video, and Slo-Mo; Face ID for secure authentication and Apple Pay; A13 Bionic chip with third-generation Neural Engine; Fast charge with 18W adapter included; Wireless charging",
+    "price": "1109.00",
+    "images": ["images/iphone11prospacegray/11.jpg", "images/iphone11prospacegray/12.jpg", "images/iphone11prospacegray/13.jpg"],
+    "groups": "iphone-11Pro256",
+    "color": "gray",
+    "category": "phones"
+    },
+    {
+    "id": "6858039173",
+    "name": "Apple iPhone 11 Pro 256GB Gold",
+    "description": "5.8-inch Super Retina XDR OLED display; Water and dust resistant (4 meters for up to 30 minutes, IP68); Triple-camera system with 12MP Ultra Wide, Wide, and Telephoto cameras; Night mode, Portrait mode, and 4K video up to 60fps; 12MP TrueDepth front camera with Portrait mode, 4K video, and Slo-Mo; Face ID for secure authentication and Apple Pay; A13 Bionic chip with third-generation Neural Engine; Fast charge with 18W adapter included; Wireless charging",
+    "price": "1109.00",
+    "images": ["images/iphone11progold/11.jpg", "images/iphone11progold/12.jpg"],
+    "groups": "iphone-11Pro256",
+    "color": "gold",
+    "category": "phones"
+    },
+    {
+    "id": "9290166759",
+    "name": "Beats Studio3 Wireless Midnight Black",
+    "description": "Pure adaptive noise canceling (pure ANC) actively blocks external noise; Real-time Audio calibration preserves a Premium listening experience; Up to 22 hours of battery life enables full-featured all-day wireless playback; Apple W1 chip for class 1 wireless Bluetooth connectivity & battery efficiency; With fast Fuel, a 10-minute charge gives 3 hours of play when battery is low. Rechargeable lithium ion battery",
+    "price": "236.66",
+    "images": ["images/beatsstudio3midblack/11.jpg","images/beatsstudio3midblack/12.jpg","images/beatsstudio3midblack/13.jpg"],
+    "groups": "beats-beatsStudio3Wireless",
+    "color": "black",
+    "category": "headphones"
+    },
+    {
+    "id": "6974306372",
+    "name": "Beats Studio3 Wireless Matte Black",
+    "description": "Pure adaptive noise canceling (pure ANC) actively blocks external noise; Real-time Audio calibration preserves a Premium listening experience; Up to 22 hours of battery life enables full-featured all-day wireless playback; Apple W1 chip for class 1 wireless Bluetooth connectivity & battery efficiency; With fast Fuel, a 10-minute charge gives 3 hours of play when battery is low. Rechargeable lithium ion battery",
+    "price": "194.29",
+    "images": ["images/beatsstudio3matteblack/11.jpg","images/beatsstudio3matteblack/12.jpg","images/beatsstudio3matteblack/13.jpg"],
+    "groups": "beats-beatsStudio3Wireless",
+    "color": "black",
+    "category": "headphones"
+    },
+    {
+    "id": "7702000413",
+    "name": "Beats Studio3 Wireless Midnight Red",
+    "description": "Pure adaptive noise canceling (pure ANC) actively blocks external noise; Real-time Audio calibration preserves a Premium listening experience; Up to 22 hours of battery life enables full-featured all-day wireless playback; Apple W1 chip for class 1 wireless Bluetooth connectivity & battery efficiency; With fast Fuel, a 10-minute charge gives 3 hours of play when battery is low. Rechargeable lithium ion battery",
+    "price": "229.66",
+    "images": ["images/beatsstudio3red/11.jpg","images/beatsstudio3red/12.jpg","images/beatsstudio3red/13.jpg"],
+    "groups": "beats-beatsStudio3Wireless",
+    "color": "red",
+    "category": "headphones"
+    },
+    {
+    "id": "6611372165",
+    "name": "Bose QuietComfort 35 II Wireless Black",
+    "description": "Three levels of world-class noise cancellation for better listening experience in any environment; Alexa-enabled for voice access to music, information, and more; Noise-rejecting dual-microphone system for clear sound and voice pick-up; Balanced audio performance at any volume; Hassle-free Bluetooth pairing, personalized settings, access to future updates, and more through the Bose Connect app; Bose AR enabled* — an innovative, audio-only version of augmented reality; Unlock Bose AR* via a firmware update through the Bose Connect app",
+    "price": "349.00",
+    "images": ["images/boseQCom35wirelessBlack/11.jpg","images/boseQCom35wirelessBlack/12.jpg","images/boseQCom35wirelessBlack/13.jpg"],
+    "groups": "bose-quietComfort35IIWireless",
+    "color": "black",
+    "category": "headphones"
+    },
+    {
+    "id": "5094322076",
+    "name": "Bose QuietComfort 35 II Wireless Silver",
+    "description": "Three levels of world-class noise cancellation for better listening experience in any environment; Alexa-enabled for voice access to music, information, and more; Noise-rejecting dual-microphone system for clear sound and voice pick-up; Balanced audio performance at any volume; Hassle-free Bluetooth pairing, personalized settings, access to future updates, and more through the Bose Connect app; Bose AR enabled* — an innovative, audio-only version of augmented reality; Unlock Bose AR* via a firmware update through the Bose Connect app",
+    "price": "349.00",
+    "images": ["images/boseQCom35wirelessSilver/11.jpg","images/boseQCom35wirelessSilver/12.jpg","images/boseQCom35wirelessSilver/13.jpg"],
+    "groups": "bose-quietComfort35IIWireless",
+    "color": "silver",
+    "category": "headphones"
+    },
+    {
+    "id": "3688903843",
+    "name": "Sennheiser Momentum 3 Wireless",
+    "description": "Auto on/off and smart pause - never miss a beat With seamless on/off and pause functionality. Plays your music faster than any other headphone. Active noise cancellation and transparent hearing - Momentum 3 wireless adapts to your environment wherever you find yourself Exceptional comfort - soft ear-pads and headband crafted from genuine Leather insure exceptional wearing comfort during long listening sessions Three button interface - Provides easy operation without having to read a manual.Frequency range: 6Hz - 22kHz Automatic pairing mode ",
+    "price": "399.00",
+    "images": ["images/sennheisermomentum3/11.jpg","images/sennheisermomentum3/12.jpg","images/sennheisermomentum3/13.jpg"],
+    "groups": "sennheiser-momentum3",
+    "color": "black",
+    "category": "headphones"
+    },
+    {
+    "id": "8979018792",
+    "name": "Apple Watch Series 5 (GPS + Cellular, 44mm) - Black Sport Band",
+    "description": "GPS,Over 30% larger display, Electrical and optical heart sensors, ECG app, Digital Crown with haptic feedback, 50% louder speaker, 64-bit dual-core processor, Improved accelerometer and gyroscope for fall detection, Swim proof",
+    "price": "405.00",
+    "images": ["images/appleWatch544gray/11.jpg","images/appleWatch544gray/12.jpg"],
+    "groups": "appleWatch-series5-44mm",
+    "color": "black",
+    "category": "smartwatches"
+    },
+    {
+    "id": "5775325354",
+    "name": "Apple Watch Series 3 (GPS + Cellular, 38mm) - White Sport Band",
+    "description": "GPS, Optical heart sensor, Swimproof, Accelerometer and gyroscope, S3 with dual-core processor",
+    "price": "150.00",
+    "images": ["images/appleWatch338white/11.jpg","images/appleWatch338white/12.jpg"],
+    "groups": "appleWatch-series3-38mm",
+    "color": "white",
+    "category": "smartwatches"
+    },
+    {
+    "id": "9676636297",
+    "name": "Apple Watch Series 4 (GPS + Cellular, 40mm) - Pink Sand Sport Band",
+    "description": "GPS,Over 30% larger display, Electrical and optical heart sensors, ECG app, Digital Crown with haptic feedback, 50% louder speaker, 64-bit dual-core processor, Improved accelerometer and gyroscope for fall detection, Swim proof, watchOS 5",
+    "price": "384.00",
+    "images": ["images/appleWatch440pink/11.jpg","images/appleWatch440pink/12.jpg"],
+    "groups": "appleWatch-series4-40mm",
+    "color": "pink",
+    "category": "smartwatches"
+    },
+    {
+    "id": "0263186914",
+    "name": "Samsung Galaxy Watch Active2 - Aqua Black 44mm",
+    "description": "Heart and Health Monitoring - 1.4” (34 mm),Circular Super AMOLED (360 x 360) - Full Color Always On Display - Corning Gorilla Glass DX+ Processor: 1.15 GHz Dual-Core - Maximum Depth of Water Resistance: 164 feet; Lightweight Design - 5ATM + IP68 / MIL-STD-810G - Accelerometer, Gyro, Barometer, HRM, Ambient Light - Compatible with a 20mm standard strap; Advance Auto Fitness Tracker and Coaching - 768MB RAM + 4GB Internal Memory - Battery: 340mAh - Bluetooth 5.0",
+    "price": "306.00",
+    "images": ["images/samsungWatchActive244mmBlack/11.jpg","images/samsungWatchActive244mmBlack/12.jpg"],
+    "groups": "samsung-galaxyWatchActive2",
+    "color": "black",
+    "category": "smartwatches"
+    },
+    {
+    "id": "7542702668",
+    "name": "Garmin vivoactive - Black",
+    "description": "Regular fits wrist circumferences 5.39 to 7.68 (137 to 195 mm),GPS smartwatch with a sunlight-readable, high-resolution color touchscreen. Display size-28.6 mm x 20.7 mm.Display resolution:205 x 148 pixels 24/7 HEART RATE MONITORING - Elevate wrist heart technology gives you heart rate all day and night without an additional strap,Heart rate is not available while swimming LONG BATTERY LIFE - Up to 8 days in watch/activity tracking mode. Battery life : GPS mode: Up to 13 hours. Smartwatch mode: Up to 8 days",
+    "price": "300.00",
+    "images": ["images/garminVivo/11.jpg","images/garminVivo/12.jpg"],
+    "groups": "garmin-vivoactive",
+    "color": "black",
+    "category": "smartwatches"
+    },
+    {
+    "id": "4785433439",
+    "name": "Amazfit Verge Gray",
+    "description": "A smartwatch with understated elegance for the fashion-conscious fitness enthusiast, the Amazfit Verge is the perfect combination of style and technology. Be Fashionably Fit: Get clear and actionable insights into your health with 24/7 heart rate monitoring, sleep analysis and fitness with a suite of advanced sensors and 12 sport tracking modes like run, trail run, soccer, cycling, etc. Live Connected: The Amazfit Verge comes with Alexa built-in and the ability to make and receive calls. Also, get real-time notifications from all of your favorite mobile apps such as text messages, email, Facebook, Twitter.",
+    "price": "159.00",
+    "images": ["images/amazfitVerge/11.jpg","images/amazfitVerge/12.jpg"],
+    "groups": "amazfit-verge",
+    "color": "black",
+    "category": "smartwatches"
+    },
+    {
+    "id": "9742280149",
+    "name": "HP 2019 Newest Premium 15.6-inch",
+    "description": "Intel Dual Core AMD A6-9225 2.6Ghz Base Frequency Burst Frequency up to 3.0Ghz (With DVD Drive, No Touchscreen), AMD Radeon R4. RAM is upgraded to 8GB memory for multitasking Adequate high-bandwidth RAM to smoothly run multiple applications and browser tabs all at once. Webcam, 802.11 b/g/n, Bluetooth DVD-RW, 2 x USB 3.0 Type-A, 1 x USB 2.0, 1 x HDMI, 1 x RJ-45, 1 x headphone/microphone combo",
+    "price": "410.00",
+    "images": ["images/hp15laptop/11.jpg","images/hp15laptop/12.jpg", "images/hp15laptop/13.jpg"],
+    "groups": "hp-laptop15",
+    "color": "black",
+    "category": "laptop"
+    },
+    {
+    "id": "2068832107",
+    "name": "ASUS Chromebook C425 Clamshell 14",
+    "description": "14 inch Full HD IPS 1920x1080 4-way Nano Edge Display that allows for a 14 inch screen to fit in the body of a 13 inch Laptop footprint with large 6-inch trackball Powered by the Intel Core m3-8100y Processor for super-fast and snappy performance 8GB LPDDR3 RAM; 64GB eMMC storage and 2x Full function USB Type-C (Gen 1) and 1x Type-A (Gen 1) ports plus a backlit keyboard (usb transfer speed may vary. Learn more at Asus website); 180 Degree hinge design for versatile viewing experience; 1.4mm key travel distance backlit keyboard",
+    "price": "400.00",
+    "images": ["images/asusChromebookC425/11.jpg","images/asusChromebookC425/12.jpg", "images/asusChromebookC425/13.jpg"],
+    "groups": "asus-chromebook",
+    "color": "silver",
+    "category": "laptop"
+    },
+    {
+    "id": "2347838871",
+    "name": "Apple MacBook Pro 13",
+    "description": "Quad-core 8th-Generation Intel Core i5 Processor; 13-inch, 8GB RAM, 128GB Storage; Brilliant Retina Display with True Tone technology; Touch Bar and Touch ID; Intel Iris Plus Graphics 645; Ultrafast SSD; Two Thunderbolt 3 (USB-C) ports; Up to 10 hours of battery life",
+    "price": "1199.00",
+    "images": ["images/macBookPro13/11.jpg","images/macBookPro13/12.jpg", "images/macBookPro13/13.jpg"],
+    "groups": "macBookpro13",
+    "color": "gray",
+    "category": "laptop"
+    },
+    {
+    "id": "6672321015",
+    "name": "Apple MacBook Air 13",
+    "description": "Apple M1.8 GHz dual-core Intel Core i5 Processor; 128GB SSD; Intel HD Graphics 6000; Fast SSD Storage; 8GB memory; Two USB 3 ports; Thunderbolt 2 port; Sdxc port",
+    "price": "899.00",
+    "images": ["images/macBookAir13/11.jpg","images/macBookAir13/12.jpg", "images/macBookAir13/13.jpg"],
+    "groups": "macBookair13",
+    "color": "silver",
+    "category": "laptop"
+    },
+    {
+    "id": "9348457762",
+    "name": "Acer Aspire 5 Slim 15 A515",
+    "description": "AMD Ryzen 3 3200U Dual Core Processor (Up to 3.5GHz); 4GB DDR4 Memory; 128GB PCIe NVMe SSD; 15.6 inches Full HD (1920 x 1080) Widescreen LED backlit IPS Display; AMD Radeon Vega 3 Mobile Graphics; 1 USB 3.1 Gen 1 Port, 2 USB 2.0 Ports & 1 HDMI Port with HDCP support; 802.11ac Wi-Fi; Backlit Keyboard; Up to 7.5 Hours Battery Life",
+    "price": "309.00",
+    "images": ["images/acerAspire5/11.jpg","images/acerAspire5/12.jpg", "images/acerAspire5/13.jpg"],
+    "groups": "acer-aspire515",
+    "color": "silver",
+    "category": "laptop"
+    },
+    {
+    "id": "1237634946",
+    "name": "ASUS VivoBook 15",
+    "description": "15.6 inch Full HD 4 Way NanoEdge bezel display with stunning 88% screen-to-body ratio; Intel Core i3-8145U Processor (4M Cache, up to 3.9 GHz); 8GB RAM and 128GB M.2 SSD; Comprehensive connections including USB 3.1 Type-C , USB 3.1 Type-A, USB 2.0, and HDMI; Gigabit Wi-Fi 5 (802.11ac)",
+    "price": "399.00",
+    "images": ["images/acerAspire5/11.jpg","images/acerAspire5/12.jpg", "images/acerAspire5/13.jpg"],
+    "groups": "asus-vivo15",
+    "color": "black",
+    "category": "laptop"
+    }
+]
