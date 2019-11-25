@@ -399,6 +399,10 @@ nav {
   background-color: #f5f5f5;
 }
 
+.main-pg-container {
+  padding-bottom: 10px;
+}
+
 .main-slider {
   position: relative;
   overflow: hidden;
@@ -513,7 +517,6 @@ section.new-products .new-products-header .products-arrow-right:before {
   border-right: 1px solid #000000;
 }
 section.new-products .new-products-items-wrapper {
-  /* width: 2000px; */
   margin: 0;
   padding: 20px;
   -webkit-transition: all 0.3s;

@@ -11,6 +11,8 @@ const setDefaultData = () => {
     return Promise.all(values.map(i => i.json()));
   }).then(([categories, products]) => {
     getValuesFromCategs(categories, products);
+  }).then(() => {
+    setNewProdSlider();
   });
 };
 

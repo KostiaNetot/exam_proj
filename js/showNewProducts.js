@@ -37,6 +37,7 @@ function appendNewProdItem(item, products) {
       categoriesArr.forEach((item) => {
         $(wrapper).append(createNewProdItem(item));
       });
+  setSectionsMeasuring(item.children('.new-products-items-wrapper'));
 }
 
 const sortArrayDataByCategory = (array, category) => {
