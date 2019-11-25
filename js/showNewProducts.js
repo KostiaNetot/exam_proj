@@ -15,7 +15,8 @@ const showNewProductsSections = (name, dataName, borderCol, productsData) => {
     'data-name': dataName,
     append: $('<div>', {
       class: 'new-products-items-wrapper row',
-      'data-name': dataName
+      'data-name': dataName,
+      'id': `slider-new-${dataName}`
     }),
     css: {
       borderTop: `2px solid ${borderCol}`

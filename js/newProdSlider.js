@@ -11,17 +11,12 @@ function setSectionsMeasuring(wrapper) {
   let itemCard = wrapper.children('.new-products-item');
   itemCard.width(sectionWidth / 3);
   wrapper.width(itemCard.outerWidth() * itemCard.length);
-
-  // wrapper.closest('.new-products').on('click', '.products-arrow-right', () => {
-  //   newProdSlideRight(wrapper, itemCard.outerWidth());
-  // });
 }
 
-// const newProdSlideRight = (wrapper, cardWidth) => {
-//   console.log(cardWidth);
-//   wrapper.css('transform',`translateX(-${cardWidth}px)`);
-// };
-
-const setNewProdSlider = () => {
-  $('.new-products').on('click', '.products-arrow', );
-};
+function setNewProdSlider() {
+  $('.new-products-items-wrapper').each(function () {
+    let newCarouselProd = new CarouselNewProd({
+      elem: `#${$(this).attr('id')}`,
+    });
+  });
+}

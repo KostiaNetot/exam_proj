@@ -466,6 +466,7 @@ section.new-products {
   margin-top: 30px;
   overflow: hidden;
   background-color: #ffffff;
+  position: relative;
 }
 section.new-products .new-products-header {
   padding: 10px 0;
@@ -521,6 +522,7 @@ section.new-products .new-products-items-wrapper {
   padding: 20px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  position: relative;
 }
 
 section.new-products .new-products-item {
