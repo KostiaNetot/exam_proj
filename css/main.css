@@ -539,9 +539,11 @@ section.new-products .new-products-item .item-img-wrapper img {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
+  max-height: 100%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
