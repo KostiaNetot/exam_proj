@@ -552,8 +552,12 @@ section.new-products .new-products-item .item-img-wrapper img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+section.new-products .new-products-item .item-img-wrapper .second-pic {
+  display: none;
+}
 section.new-products .new-products-item .item-text-wrapper {
   padding: 25px 10px;
+  padding-right: 14px;
   width: 140px;
 }
 section.new-products .new-products-item h5 {
@@ -565,11 +569,26 @@ section.new-products .new-products-item .item-price {
   font-family: Oswald, sans-serif;
   color: #ed8b5c;
 }
-section.new-products .new-products-item .quick-view-item {
+section.new-products .new-products-item .prod-btn,
+section.new-products .new-products-item .add-to-basket {
   color: #ffffff;
   font-size: 13px;
   background-color: #ed8b5c;
   padding: 6px 12px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+section.new-products .new-products-item .prod-btn:hover,
+section.new-products .new-products-item .add-to-basket:hover {
+  background-color: grey;
+}
+section.new-products .new-products-item .prod-btn .fa-eye,
+section.new-products .new-products-item .add-to-basket .fa-eye {
+  padding-right: 12px;
+}
+section.new-products .new-products-item .prod-btn .fa-eye:before,
+section.new-products .new-products-item .add-to-basket .fa-eye:before {
+  content: "";
 }
 
 .main-footer {

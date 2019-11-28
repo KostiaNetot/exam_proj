@@ -1,17 +1,9 @@
 'use strict';
 
 const showNewProductsSections = (name, dataName, borderCol, productsData) => {
-  let NewProdHtmlContent = `
-    <div class="new-products-header">
-      <h4>New ${name}</h4>
-      <div class="products-arrow products-arrow-left"></div>
-      <div class="products-arrow products-arrow-right"></div>
-    </div>
-`;
-
   $('<section>', {
     class: 'new-products',
-    html: NewProdHtmlContent,
+    html: NewProdHtmlContent(),
     'data-name': dataName,
     append: $('<div>', {
       class: 'new-products-items-wrapper row',
@@ -38,7 +30,7 @@ function appendNewProdItem(item, products) {
       categoriesArr.forEach((item) => {
         $(wrapper).append(createNewProdItem(item));
       });
-  setSectionsMeasuring(item.children('.new-products-items-wrapper'));
+  // setSectionsMeasuring(item.children('.new-products-items-wrapper'));
 }
 
 const sortArrayDataByCategory = (array, category) => {
@@ -61,8 +53,18 @@ const createNewProdItem = (prodObj) => {
         </div>
       </div>
       <div class="bottom-side">
-        <button type="button" class="quick-view-item" data-id=${prodObj.id}><i class="fa fa-eye"></i> Buy it</button>
+        <button type="button" class="prod-btn add-to-basket" data-id=${prodObj.id}><i class="fa fa-eye"></i>More details</button>
       </div>
     </div>
   `;
+};
+
+const NewProdHtmlContent = () => {
+  return `
+    <div class="new-products-header">
+      <h4>New ${name}</h4>
+      <div class="products-arrow products-arrow-left"></div>
+      <div class="products-arrow products-arrow-right"></div>
+    </div>
+`;
 };
