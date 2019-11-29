@@ -2,26 +2,27 @@
 
 let categoriesData = [];
 let productsData = [];
+let selectProduct = {};
 
 const setDefaultData = () => {
-  let fetchCategs = fetch('categories.json');
-  let fetchProds = fetch('products.json');
+  let fetchCategs = fetch('data/categories.json');
+  let fetchProds = fetch('data/products.json');
 
   Promise.all([fetchCategs, fetchProds]).then(values => {
     return Promise.all(values.map(i => i.json()));
   }).then(([categories, products]) => {
-    getValuesFromCategs(categories, products);
-  }).then(() => {
-    makeSettings();
+    makeSettings(categories, products);
+  }).catch(function (err) {
+      console.log('Error', err);
   });
 };
 
 const getValuesFromCategs = (categories, products) => {
-  for (let item of categories) {
-    createCategListItem(item['name'], item['key'], item['icon'], products);
-    showNewProductsSections(item['name'], item['key'], item['border-col'], products);
+  for (let item of categoriesData) {
+    createCategListItem(item['name'], item['key'], item['icon'], productsData);
+    showNewProductsSections(item['name'], item['key'], item['border-col'], productsData);
   }
-  checkNewProdSection(products);
+  checkNewProdSection();
 };
 
 const createCategListItem = (name, dataName, icon, products) => {
@@ -35,9 +36,9 @@ const createCategListItem = (name, dataName, icon, products) => {
   }).appendTo('.v-megamenu');
 };
 
-const setEventListener = (el, funct) => {
-  el.on('click', funct);
-};
+// const setEventListener = (el, funct) => {
+//   el.on('click', funct);
+// };
 
 function testButtonFunction() {
   alert('Hello Dima, eventListener works! Check console))')

@@ -3,7 +3,7 @@
 const showNewProductsSections = (name, dataName, borderCol, productsData) => {
   $('<section>', {
     class: 'new-products',
-    html: NewProdHtmlContent(),
+    html: NewProdHtmlContent(name),
     'data-name': dataName,
     append: $('<div>', {
       class: 'new-products-items-wrapper row',
@@ -16,25 +16,25 @@ const showNewProductsSections = (name, dataName, borderCol, productsData) => {
   }).appendTo('.main-pg-container');
 };
 
-const checkNewProdSection = (products) => {
+const checkNewProdSection = () => {
   let newProdSections = $('.new-products');
   newProdSections.each(function () {
-    appendNewProdItem($(this), products);
+    appendNewProdItem($(this));
   });
 };
 
-function appendNewProdItem(item, products) {
+function appendNewProdItem(item) {
   let wrapper = item.children('.new-products-items-wrapper');
   let categName = wrapper.data('name');
-  let categoriesArr = sortArrayDataByCategory(products, categName);
-      categoriesArr.forEach((item) => {
+  let categoriesArr = sortArrayDataByCategory(categName);
+  categoriesArr.forEach((item) => {
         $(wrapper).append(createNewProdItem(item));
       });
-  // setSectionsMeasuring(item.children('.new-products-items-wrapper'));
 }
 
-const sortArrayDataByCategory = (array, category) => {
-  return array.filter((item) => {
+//// Sort Products By Category from Products Data....
+const sortArrayDataByCategory = (category) => {
+  return productsData.filter((item) => {
     return item.category === category;
   });
 };
@@ -59,7 +59,7 @@ const createNewProdItem = (prodObj) => {
   `;
 };
 
-const NewProdHtmlContent = () => {
+const NewProdHtmlContent = (name) => {
   return `
     <div class="new-products-header">
       <h4>New ${name}</h4>

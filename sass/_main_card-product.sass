@@ -1,0 +1,205 @@
+.wrapper-product-card
+    margin-top: 0
+    .breadcrumb-block
+        background: #fff
+        height: 50px
+        width: 100%
+        padding: 0
+        line-height: 50px
+        padding-left: 20px
+        margin-bottom: 30px
+        border: 1px solid #f0f0f0
+        .breadcrumb-list
+            display: flex
+            position: relative
+            .breadcrumb-link
+                font-size: 14px
+                font-family: 'Oswald',sans-serif
+                font-weight: 300
+                text-transform: uppercase
+                color: $darkgrey
+                padding-right: 30px
+                transition-duration: .35s
+                position: relative
+                cursor: pointer
+                &:before
+                    font-family: FontAwesome
+                    content: "\f105"
+                    position: absolute
+                    display: block
+                    color: #444
+                    right: 12px
+                    font-size: 14px
+                    font-weight: 700
+                &:hover
+                    color: $orange
+                &:last-child
+                    &::before
+                        content: ""
+                        right: 0
+    #content-wrapper
+        #block-product-information
+            h1
+                font-family: 'Oswald',sans-serif
+                font-size: 24px
+                line-height: 1
+                text-transform: uppercase
+                color: $darkgrey
+            .btnBuyProduct
+                color: #fff
+                background: #e16959
+                font-size: 13px
+                height: auto
+                line-height: 1
+                padding: 10px 15px
+                text-transform: uppercase
+                transition: all 0.15s ease-in-out 0s
+                -moz-transition: all 0.15s ease-in-out 0s
+                -ms-transition: all 0.15s ease-in-out 0s
+                -o-transition: all 0.15s ease-in-out 0s
+                -webkit-transition: all 0.15s ease-in-out 0s
+                &:hover
+                    background-color: $grey
+                i.fa-shopping-cart
+                    &:before
+                        content: "\f07a"
+        #slider-base-image 
+            border: 1px solid #f0f0f0
+            background-color: #fff
+            position: relative
+            left: -14px
+            height: 400px
+            padding: 20px
+            text-align: center
+            clearmargin-bottom: 20px
+            margin-bottom: 20px
+            img
+                height: 100%
+                width: 100%
+                object-fit: contain
+        #slider-carousel-images
+            position: relative
+            left: -14px
+            margin-top: 16px
+            width: 80%
+            margin: 0 auto
+            .owl-nav
+                position: absolute
+                top: 28px
+                display: flex
+                width: 100%
+                justify-content: space-between
+                z-index: -1
+                .owl-prev
+                    background-color: #333
+                    color: #fff
+                    padding: 7px
+                    left: -22px
+                    position: relative
+                .owl-next
+                    background-color: #333
+                    color: #fff
+                    padding: 4px
+                    padding: 7px
+                    right: -22px
+                    position: relative
+                
+        .item.img-tmbl
+            height: 80px
+            width: 80px
+            margin: 0 auto
+            background-color: #fff
+            border: 1px solid #f0f0f0
+            cursor: pointer
+            img 
+                padding: 6px
+                height: 100%
+                width: 100%
+                object-fit: contain
+    #description-full
+        margin-top: 20px
+        margin-left: -15px
+        margin-right: -15px
+        .title-description
+            font-family: 'Oswald',sans-serif
+            background: #e16959
+            color: #fff
+            border: none
+            font-size: 14px
+            line-height: 18px
+            padding: 16px 25px
+            text-transform: uppercase
+            width: fit-content
+        #content-description 
+            background-color: #fff
+            padding: 25px 30px
+            border-top: 2px solid #e16959
+            p
+                font-size: 14px
+                line-height: 24px
+                color: #666
+                text-align: justify
+
+
+
+
+.product-prices
+    font-weight: 700
+    font-size: 24px
+    line-height: 1
+    color: #e16959
+    font-family: 'ArialMT'
+    margin-top: 15px
+    margin-bottom: 15px
+.product-description-short
+    font-family: 'ArialMT'
+    font-size: 13px
+    color: $grey-text
+.control-label
+    font-family: 'ArialMT'
+    line-height: 30px
+    margin-bottom: 0
+    margin-right: 15px
+    min-width: 65px
+    width: auto
+    color: $grey-text
+    font-size: 13px
+    
+#add-to-cart
+    .control-choice-color
+        display: flex
+        margin: 15px 0
+    #group-color
+        display: flex
+        position: relative
+        margin-top: 3px
+        .color
+            display: block
+            width: 20px
+            height: 20px
+            border: 1px solid #d2d2d2
+            padding: 4px
+            margin-right: 10px
+            cursor: pointer
+            transition: all .3s
+            &:hover
+                transform: scale(1.2)
+        .checkColor
+            border: 2px solid red
+    #input-group-fromProduct
+        margin-bottom: 20px
+        #quantityInput
+            width: 100px
+            padding: .375rem .75rem
+            font-size: 1rem
+            line-height: 1.5
+            color: #495057
+            background-color: #fff
+            background-clip: padding-box
+            border: 1px solid #ced4da
+            margin-top: -5px
+
+
+
+
+                            

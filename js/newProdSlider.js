@@ -14,12 +14,17 @@ function setSectionsMeasuring(wrapper) {
   });
 }
 
-function makeSettings() {
+function makeSettings(categories, products) {
+  categoriesData = categories;
+  productsData = products;
+  getValuesFromCategs();
   setNewProdSlider();
-  // setEventListener($('.prod-btn'), testButtonFunction);
-  $('.new-products').on('click', '.prod-btn', testButtonFunction);
-  $('.item-img-wrapper').on('mouseover', showSecondPic);
-  $('.item-img-wrapper').on('mouseout', showFirstPic);
+  $('.new-products').on('click', '.prod-btn', function () {
+    let dataId = this.getAttribute('data-id');
+    findSelectedProductNumber(dataId);
+  });
+  // $('.new-products').on('mouseover', '.prod-btn', showSecondPic);
+  // $('.new-products').on('mouseout', '.prod-btn', showFirstPic);
 }
 
 function setNewProdSlider() {

@@ -1,0 +1,134 @@
+"use strict";
+
+// index page
+
+function findSelectedProductNumber(dataId) {
+    console.log(productsData);
+    changePageContent($('.main-pg-container'), $('.wrapper-product-card'));
+    let prodIndex = productsData.map(function (obj) {
+        return obj.id;
+    }).indexOf(dataId);
+    console.log("Numder data id " + prodIndex);
+    selectProduct = productsData[prodIndex];
+    setInfoByProduct();
+}
+
+// Hide one content AND Show show content:
+function changePageContent(contentPrev, contentNext) {
+    contentPrev.addClass('hidden');
+    contentNext.removeClass('hidden');
+}
+
+let showBigImage = (number = 0) => {
+    $('#slider-base-image').html('');
+    $('<img/>', {
+        src: `${selectProduct.images[number]}`,
+        alt: `${selectProduct.name}`,
+    }).appendTo('#slider-base-image');
+}
+
+function setInfoByProduct() {
+    // clear area
+    $('#blck-prod').html('');
+    $('#btnBuyCardProduct').html('');
+    $('#content-description').html('');
+    $('#group-color').html('');
+    $('#slider-carousel-images').html('');
+    //breadcrumb
+    $('#breadcrumb-link-category').html(`${selectProduct.category}`);
+    $('#breadcrumb-link-products').html(`${selectProduct.name}`);
+    // info about products
+
+    showBigImage();
+    $('<h1/>', {
+        text: `${selectProduct.name}`,
+        "class": 'h1',
+    }).appendTo('#blck-prod');
+
+    $('<div/>', {
+        text: `$${selectProduct.price}`,
+        "class": 'product-prices',
+    }).appendTo('#blck-prod');
+
+    $('<button/>', {
+        html: '<i class="fa fa-shopping-cart"></i> ADD TO CART',
+        "class": 'btnBuyProduct',
+    }).appendTo('#btnBuyCardProduct');
+
+    // Cut text description
+    let shortDescription = selectProduct.description.slice(0, 100);
+
+    $('<div/>', {
+        html: `${shortDescription} ...`,
+        "class": 'product-description-short',
+    }).appendTo('#blck-prod');
+
+    $('<p/>', {
+        html: `${selectProduct.description}`,
+        "class": '',
+    }).appendTo('#content-description');
+
+    let similarProducts = checkSimilarProduct(selectProduct);
+
+    similarProducts.forEach(function (item) {
+        if (item.id === selectProduct.id) {
+            $('<div/>', {
+                "data-id": item.id,
+                "style": `background-color: ${item.color}`,
+                "class": 'color checkColor',
+            }).appendTo('#group-color');
+        } else {
+            $('<div/>', {
+                "data-id": item.id,
+                "style": `background-color: ${item.color}`,
+                "class": 'color',
+            }).appendTo('#group-color');
+        }
+    });
+
+    selectProduct.images.forEach(function (item, i) {
+       let slideItem = $('<div/>', {
+            "data-imgSlider": `${i}`,
+            "class": 'item img-tmbl',
+            click: (event) => {
+                showBigImage(i);
+            }
+        }).appendTo('#slider-carousel-images');
+
+        $('<img/>', {
+            "class": 'img-tmbl',
+            src: `${item}`,
+            alt: `${selectProduct.name}`,
+        }).appendTo(slideItem);
+    });
+
+startOwlCarousel();
+}
+
+let startOwlCarousel = () => {
+    $ ('.owl-carousel').trigger('destroy.owl.carousel');
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        navText: ["&#10094;","&#10095;"],
+        responsive:{
+            0:{
+                items:3
+            },
+
+        }
+    })
+}
+
+let checkSimilarProduct = (product) => {
+    let similarProd = [];
+    productsData.forEach(function (item) {
+        if (item.groups === product.groups) {
+            similarProd.push(item);
+        }
+    });
+
+    return (similarProd);
+}
+
