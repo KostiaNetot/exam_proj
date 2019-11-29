@@ -3,7 +3,8 @@ Exam Project teamwork Lera, Dima, Kostia
 -----------------------------------------------------------------------------
 Online Store:
 
-Main page Category page Product page
+Main page Category 
+page Product page
 
 1. Add / View Product Reviews
 2. Filters
@@ -14,8 +15,9 @@ Main page Category page Product page
 7. modal windows
 8. responsiveness to user actions
 
-Gulp / webpack: sources + build version of ES6 + Regular expression validation
-----------------------------------------------------------------------------------
+Gulp / webpack: sources + build version of ES6 + 
+Regular expression validation
+
 Интернет-магазин:
 
 Главная страница
