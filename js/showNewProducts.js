@@ -53,7 +53,7 @@ const createNewProdItem = (prodObj) => {
         </div>
       </div>
       <div class="bottom-side">
-        <button type="button" class="prod-btn add-to-basket" data-id=${prodObj.id}><i class="fa fa-eye"></i>More details</button>
+        <button type="button" class="prod-btn" data-id=${prodObj.id}><i class="fa fa-eye"></i>More details</button>
       </div>
     </div>
   `;

@@ -20,9 +20,26 @@ const setDefaultData = () => {
 const getValuesFromCategs = (categories, products) => {
   for (let item of categoriesData) {
     createCategListItem(item['name'], item['key'], item['icon'], productsData);
+    createCategColumnList(item['name'], item['key'], productsData);
     showNewProductsSections(item['name'], item['key'], item['border-col'], productsData);
   }
   checkNewProdSection();
+};
+
+const createCategColumnList = (name, dataName, products) => {
+  console.log(name, dataName, products);
+  let listItem = $('<a>', {
+    text: name,
+    'data-name': dataName,
+    click: function(e) {
+      e.preventDefault();
+      showCategoryPage(name, dataName, products);
+    }
+  });
+  $('<li>', {
+      html: listItem
+    }
+  ).appendTo('.category-column-menu');
 };
 
 const createCategListItem = (name, dataName, icon, products) => {
