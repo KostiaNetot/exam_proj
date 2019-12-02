@@ -87,7 +87,7 @@ function setInfoByProduct() {
     });
 
     selectProduct.images.forEach(function (item, i) {
-       let slideItem = $('<div/>', {
+        let slideItem = $('<div/>', {
             "data-imgSlider": `${i}`,
             "class": 'item img-tmbl',
             click: (event) => {
@@ -102,23 +102,94 @@ function setInfoByProduct() {
         }).appendTo(slideItem);
     });
 
-startOwlCarousel();
+    startOwlCarousel();
+    showComments(selectProduct.id);
 }
 
 let startOwlCarousel = () => {
-    $ ('.owl-carousel').trigger('destroy.owl.carousel');
+    $('.owl-carousel').trigger('destroy.owl.carousel');
     $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        navText: ["&#10094;","&#10095;"],
-        responsive:{
-            0:{
-                items:3
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ["&#10094;", "&#10095;"],
+        responsive: {
+            0: {
+                items: 3
             },
-
         }
     })
+}
+
+let findIndexCommentOnData = (id) => {
+    let comIndex = commentsData.map(function (obj) {
+        return obj.id;
+    }).indexOf(id);
+
+    return comIndex;
+}
+
+// Show comments on page product
+let showComments = (id) => {
+    //clear
+    $('#content-comments').html('');
+    $('#nameCom').val('');
+    $('#textCom').val('');
+
+    let indexComment = findIndexCommentOnData(id);
+
+    if (indexComment >= 0) {
+        commentsData[indexComment].comments.forEach(function (item, i) {
+
+            let commentsBlock = $('<div/>', {
+                "class": 'comment-block',
+            }).appendTo('#content-comments');
+
+            $('<div/>', {
+                html: `${item.name}`,
+                "class": 'user-commentBlock',
+            }).appendTo(commentsBlock);
+
+            $('<div/>', {
+                html: `${item.comment}`,
+                "class": 'message-commentBlock',
+            }).appendTo(commentsBlock);
+        });
+    } else {
+        $('<div/>', {
+            html: 'No comments',
+            "class": 'noComment-block',
+        }).appendTo('#content-comments');
+    }
+}
+
+// button for add comment 
+$('#btnCom').off('click').on('click', function () {
+    let nameInput = $('#nameCom').val();
+    let textInput = $('#textCom').val();
+    let nameCommentator = validationComments(nameInput, '#wrongName', 'Please enter name!');
+    let textCommentator = validationComments(textInput, '#wrongText', 'Please enter text!');
+
+    if (nameCommentator && textCommentator) {
+        let msg = {
+            name: nameCommentator,
+            comment: textCommentator
+        }
+        let idComProd = findIndexCommentOnData(selectProduct.id);
+
+        commentsData[idComProd].comments.push(msg);
+        showComments(selectProduct.id);
+    }
+});
+
+let validationComments = (value, id, text) => {
+    if (!value) {
+        $(id).html(text);
+
+    } else {
+        $(id).html('');
+        return value;
+    }
 }
 
 let checkSimilarProduct = (product) => {

@@ -3,19 +3,29 @@
 let categoriesData = [];
 let productsData = [];
 let selectProduct = {};
+//comments
+let commentsData = [];
 
 const setDefaultData = () => {
   let fetchCategs = fetch('data/categories.json');
   let fetchProds = fetch('data/products.json');
+//load comments
+  let fetchComments = fetch('data/comments.json');
 
-  Promise.all([fetchCategs, fetchProds]).then(values => {
+  Promise.all([fetchCategs, fetchProds, fetchComments]).then(values => {
     return Promise.all(values.map(i => i.json()));
-  }).then(([categories, products]) => {
+  }).then(([categories, products, comments]) => {
     makeSettings(categories, products);
+    loadComments(comments);
   }).catch(function (err) {
       console.log('Error', err);
   });
 };
+
+let loadComments = (m) => {
+  commentsData = m;
+  console.log(commentsData);
+}
 
 const getValuesFromCategs = (categories, products) => {
   for (let item of categoriesData) {
