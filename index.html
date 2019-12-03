@@ -156,6 +156,73 @@
 
   </div>
 
+  <!----------------  Category page content-->
+
+  <div class="category-page-container container">
+    <div class="row breadcrumb-wrapper">
+      <nav class="breadcrumb-block hidden-sm-down">
+        <ul class="breadcrumb-list" id="breadcrumb-categ-push">
+          <li class="breadcrumb-link">Home</li>
+          <li id="breadcrumb-categ" class="breadcrumb-link">{categ}</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row category-content-wrapper">
+      <div class="side-column col-xs-12 col-sm-4 col-md-3">
+        <ul class="category-column-menu-wrapper">
+          <li class="category-column-menu-header">Categories:</li>
+          <ul class="category-column-menu">
+            <!--          <li>-->
+            <!--            <a href="#">fffff</a>-->
+            <!--          </li>-->
+            <!--          <li>-->
+            <!--            <a href="#">hhhhhhhh</a>-->
+            <!--          </li>-->
+            <!--          <li>-->
+            <!--            <a href="#">hhhhhhhh</a>-->
+            <!--          </li>-->
+            <!--          <li>-->
+            <!--            <a href="#">bbbbbbbbb</a>-->
+            <!--          </li>-->
+          </ul>
+        </ul>
+      </div>
+      <div class="category-content-column col-xs-12 col-sm-8 col-md-9">
+        <div class="category-img-wrapper">
+          <img id="category-main-pic" src="" alt="categPic">
+        </div>
+
+        <div class="products-selection">
+          <div class="click-product-list-grid">
+            <div class="click-product-grid">
+              <i class="fa fa-th active-color"></i>
+            </div>
+            <div class="click-product-list">
+              <i class="fa fa-th-list"></i>
+            </div>
+          </div>
+          <div class="total-products">
+            <p>There are arr.length products</p>
+          </div>
+          <div class="box-sort-by">
+            <span>Sort by: </span>
+            <select name="sort-by" id="sort-by">
+              <option value="relevance">Relevance</option>
+              <option value="a-z">Name, A to Z</option>
+              <option value="z-a">Name, Z to A</option>
+              <option value="low-high">Price, low to high</option>
+              <option value="high-low">Price, high to low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-products-wrapper">
+          <div class="row" id="category-products-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!--  Product page content-->
   <div class="wrapper-product-card hidden">
     <div class="container">
@@ -225,7 +292,7 @@
   <div class="container">
     <div class="row">
       <div class="col footer-col adresses-footer">
-        <a href="#" class="logo-link">
+        <a href="#" class="logo-link show-main">
           <img class="img-responsive logo" src="images/logo-footer.png" alt="logo">
         </a>
         <div class="contact-item-foot">
@@ -313,6 +380,14 @@
   <script src="js/showNewProducts.js"></script>
   <script src="js/showProductCard.js"></script>
   <script src="js/app.js"></script>
+
+<!-----------tedt::::------------------>
+<!--  <div class="img-item-wrap">-->
+<!--    <img alt="item-pic" src="${obj.images[0]}"></img>-->
+<!--  </div>-->
+<!--  <p class="item-name"></p>-->
+<!--  <p class="item-price"></p>-->
+
 
 </body>
 </html>

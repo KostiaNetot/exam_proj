@@ -3,24 +3,28 @@
     "name": "Phones",
     "key": "phones",
     "icon": "fa-mobile",
-    "border-col": "#ED8B5C"
+    "border-col": "#ED8B5C",
+    "picture": "images/categories/phones.jpg"
   },
   {
     "name": "Smart Watches",
     "key": "smartwatches",
     "icon": "fa-gears",
-    "border-col": "#03A9F5"
+    "border-col": "#03A9F5",
+    "picture": "images/categories/smartwatches.jpg"
   },
   {
     "name": "Headphones",
     "key": "headphones",
     "icon": "fa-shekel",
-    "border-col": "#8CC34B"
+    "border-col": "#8CC34B",
+    "picture": "images/categories/headphones.jpg"
   },
   {
     "name": "Laptops",
     "key": "laptops",
     "icon": "fa-laptop",
-    "border-col": "#B36CB8"
+    "border-col": "#B36CB8",
+    "picture": "images/categories/laptops.jpg"
   }
 ]

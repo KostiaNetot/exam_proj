@@ -23,3 +23,35 @@
         cursor: pointer
       a:hover
         color: $orange
+  .category-content-column
+    .category-img-wrapper
+      height: 288px
+      margin-bottom: 30px
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+    .products-selection
+      padding: 7px 10px 7px 15px
+      margin-bottom: 30px
+      background-color: $white
+      display: flex
+      justify-content: space-between
+      .click-product-list-grid
+        display: flex
+        justify-content: space-between
+      .fa
+        padding: 5px
+        font-size: 1.8em
+        cursor: pointer
+        transition: all .2s
+        &:hover
+          color: $orange
+      .fa-th:before
+        content: "\f00a"
+      .fa-th-list:before
+        content: "\f00b"
+      .total-products,
+      .box-sort-by
+        display: flex
+        align-items: center

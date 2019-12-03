@@ -4,7 +4,7 @@
 
 function findSelectedProductNumber(dataId) {
     console.log(productsData);
-    changePageContent($('.main-pg-container'), $('.wrapper-product-card'));
+    changePageContent('wrapper-product-card');
     let prodIndex = productsData.map(function (obj) {
         return obj.id;
     }).indexOf(dataId);
@@ -13,11 +13,17 @@ function findSelectedProductNumber(dataId) {
     setInfoByProduct();
 }
 
-// Hide one content AND Show show content:
-function changePageContent(contentPrev, contentNext) {
-    contentPrev.addClass('hidden');
-    contentNext.removeClass('hidden');
-}
+// Change content on the page:
+const changePageContent = (className) => {
+    let wrappers = document.querySelector('main').children;
+    [].forEach.call(wrappers, function (wrapper) {
+        if (wrapper.classList.contains(className)) {
+            wrapper.classList.remove('hidden')
+        } else {
+            wrapper.classList.add('hidden');
+        }
+    });
+};
 
 let showBigImage = (number = 0) => {
     $('#slider-base-image').html('');

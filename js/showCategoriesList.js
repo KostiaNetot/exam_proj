@@ -24,8 +24,7 @@ const setDefaultData = () => {
 
 let loadComments = (m) => {
   commentsData = m;
-  console.log(commentsData);
-}
+};
 
 const getValuesFromCategs = (categories, products) => {
   for (let item of categoriesData) {
@@ -37,7 +36,6 @@ const getValuesFromCategs = (categories, products) => {
 };
 
 const createCategColumnList = (name, dataName, products) => {
-  console.log(name, dataName, products);
   let listItem = $('<a>', {
     text: name,
     'data-name': dataName,
@@ -62,10 +60,6 @@ const createCategListItem = (name, dataName, icon, products) => {
     }
   }).appendTo('.v-megamenu');
 };
-
-// const setEventListener = (el, funct) => {
-//   el.on('click', funct);
-// };
 
 function testButtonFunction() {
   alert('Hello Dima, eventListener works! Check console))')

@@ -28,8 +28,8 @@ function appendNewProdItem(item) {
   let categName = wrapper.data('name');
   let categoriesArr = sortArrayDataByCategory(categName);
   categoriesArr.forEach((item) => {
-        $(wrapper).append(createNewProdItem(item));
-      });
+      $(wrapper).append(createNewProdItem(item));
+    });
 }
 
 //// Sort Products By Category from Products Data....
