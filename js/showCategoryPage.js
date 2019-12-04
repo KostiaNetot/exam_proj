@@ -2,13 +2,68 @@
 
 const showCategoryPage = (name, dataName, products) => {
   changePageContent('category-page-container');
-
+  $('.box-sort-by').html(formSelect());
   let checkedCategoryProds = sortArrayDataByCategory(dataName);
   let categoryPic = document.getElementById('category-main-pic');
   let imgPath = getValueFromArr(categoriesData, dataName, 'picture');
   categoryPic.src = imgPath;
-  document.getElementById('breadcrumb-categ').innerHTML = dataName;
+  $('#breadcrumb-categ').html(dataName);
+  $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`)
   fillCategoryContainer(checkedCategoryProds);
+  checkSelectSort(checkedCategoryProds);
+};
+
+const checkSelectSort = (arr) => {
+  let selectSort = document.forms['sort-by-form']['sort-by'];
+  selectSort.addEventListener('change', function () {
+    checkSelectValue(selectSort.value, arr);
+  })
+};
+
+const checkSelectValue = (val, arr) => {
+  let sortedArr;
+  switch (val) {
+    case 'low-high':
+      sortedArr = arr.sort((a, b) => {
+        return a.price - b.price;
+      });
+      fillCategoryContainer(sortedArr);
+      break;
+    case 'high-low':
+      sortedArr = arr.sort((a, b) => {
+        return a.price - b.price;
+      });
+      fillCategoryContainer(sortedArr.reverse());
+      break;
+    case 'a-z':
+      sortedArr = arr.sort((a, b) => {
+        let nameA = a.name.toLowerCase(),
+            nameB = b.name.toLowerCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      fillCategoryContainer(sortedArr);
+      break;
+    case 'z-a':
+      sortedArr = arr.sort((a, b) => {
+        let nameA = a.name.toLowerCase(),
+          nameB = b.name.toLowerCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      fillCategoryContainer(sortedArr.reverse());
+      break;
+  }
 };
 
 const fillCategoryContainer = (arr) => {
@@ -28,13 +83,29 @@ const createProdItemWrapper = (obj) => {
 };
 
 const createCategProdItem = (obj) => {
-  console.log(obj);
   return `
-    <div class="img-item-wrap">
+    <div class="img-item-wrap" data-id="${obj.id}">
       <img alt="item-pic" src="${obj.images[0]}"></img>
     </div>
-    <p class="item-name">${obj.name}</p>
-    <p class="item-price">${obj.price}</p>    
+    <div class="text-item-wrap" data-id="${obj.id}">
+      <p class="item-name">${obj.name}</p>
+      <p class="item-price">$<span>${obj.price}</span></p>
+    </div>    
+  `;
+};
+
+const formSelect = () => {
+  return `
+    <form name="sort-by-form">
+              <span>Sort by: </span>
+              <select name="sort-by" id="sort-by">
+                <option value="relevance">Relevance</option>
+                <option value="a-z">Name, A to Z</option>
+                <option value="z-a">Name, Z to A</option>
+                <option value="low-high">Price, low to high</option>
+                <option value="high-low">Price, high to low</option>
+              </select>
+            </form>
   `;
 };
 

@@ -55,3 +55,28 @@
       .box-sort-by
         display: flex
         align-items: center
+  .item
+    .img-item-wrap
+      padding: 5px
+      height: 220px
+      background-color: $white
+      cursor: pointer
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+    .text-item-wrap
+      padding: 14px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      .item-name
+        height: 54px
+        cursor: pointer
+        transition: all .2s
+        &:hover
+          color: $orange
+      .item-price
+        font: 14px Oswald, sans-serif
+        color: $orange
