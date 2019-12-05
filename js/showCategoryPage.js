@@ -146,6 +146,6 @@ const getValueFromArr = (arr, key, need) => {
 
 const colorCheckboxes = (color) => {
   return `
-    <label><input value="${color}" type="checkbox" checked><span class="color-square" style="background-color: ${color}"></span>${color}</label>
+    <label><input value="${color}" type="checkbox"><span class="color-square" style="background-color: ${color}"></span>${color}</label>
    `;
 };
