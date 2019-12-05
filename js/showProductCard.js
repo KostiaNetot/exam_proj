@@ -1,6 +1,7 @@
 "use strict";
 
 // index page
+let addToCartProductData =[];
 
 function findSelectedProductNumber(dataId) {
     console.log(productsData);
@@ -45,7 +46,11 @@ function setInfoByProduct() {
     $('#breadcrumb-link-products').html(`${selectProduct.name}`);
     // info about products
 
+
+
     showBigImage();
+    addToCartProductData.push(selectProduct.id);
+
     $('<h1/>', {
         text: `${selectProduct.name}`,
         "class": 'h1',
@@ -58,7 +63,8 @@ function setInfoByProduct() {
 
     $('<button/>', {
         html: '<i class="fa fa-shopping-cart"></i> ADD TO CART',
-        "class": 'btnBuyProduct',
+        "class": 'btnBuyProduct add-to-basket',
+        "data-id": `${selectProduct.id}`,
     }).appendTo('#btnBuyCardProduct');
 
     // Cut text description
