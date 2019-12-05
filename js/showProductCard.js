@@ -31,7 +31,7 @@ let showBigImage = (number = 0) => {
         src: `${selectProduct.images[number]}`,
         alt: `${selectProduct.name}`,
     }).appendTo('#slider-base-image');
-}
+};
 
 function setInfoByProduct() {
     // clear area

@@ -3,14 +3,17 @@
 const showCategoryPage = (name, dataName, products) => {
   changePageContent('category-page-container');
   $('.box-sort-by').html(formSelect());
+
   let checkedCategoryProds = sortArrayDataByCategory(dataName);
   let categoryPic = document.getElementById('category-main-pic');
   let imgPath = getValueFromArr(categoriesData, dataName, 'picture');
-  categoryPic.src = imgPath;
+      categoryPic.src = imgPath;
   $('#breadcrumb-categ').html(dataName);
-  $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`)
+  $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`);
+
   fillCategoryContainer(checkedCategoryProds);
   checkSelectSort(checkedCategoryProds);
+  checkFilters();
 };
 
 const checkSelectSort = (arr) => {
@@ -18,6 +21,13 @@ const checkSelectSort = (arr) => {
   selectSort.addEventListener('change', function () {
     checkSelectValue(selectSort.value, arr);
   })
+};
+
+const checkFilters = () => {
+  let colorsFilter = document.forms["filter-colors"];
+  colorsFilter.addEventListener('change', () => {
+    console.log(colorsFilter.elements);
+  });
 };
 
 const checkSelectValue = (val, arr) => {
@@ -68,10 +78,25 @@ const checkSelectValue = (val, arr) => {
 
 const fillCategoryContainer = (arr) => {
   let categProdWrapper = $('#category-products-grid');
+  let colorsCategory = [];
   categProdWrapper.html('');
   arr.forEach((obj) => {
     categProdWrapper.append(createProdItemWrapper(obj));
+    colorsCategory.push(obj.color);
   });
+  setColorFilter(colorsCategory);
+};
+
+const setColorFilter = (arr) => {
+  arr = removeSpareFromArray(arr);
+  $('form[name="filter-colors"]').html('');
+  arr.forEach((color) => {
+    $('form[name="filter-colors"]').append(colorCheckboxes(color));
+  });
+};
+
+const removeSpareFromArray = (arr) => {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
 };
 
 const createProdItemWrapper = (obj) => {
@@ -117,4 +142,10 @@ const getValueFromArr = (arr, key, need) => {
     }
   });
   return result;
+};
+
+const colorCheckboxes = (color) => {
+  return `
+    <label><input value="${color}" type="checkbox" checked><span class="color-square" style="background-color: ${color}"></span>${color}</label>
+   `;
 };

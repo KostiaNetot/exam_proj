@@ -2,7 +2,9 @@
   @extend .wrapper-product-card
   .side-column
     .category-column-menu-wrapper
+      border-top: 2px solid $orange
       background-color: $white
+      margin-bottom: 30px
     .category-column-menu
       padding: 0 20px
     .category-column-menu-header
@@ -23,6 +25,33 @@
         cursor: pointer
       a:hover
         color: $orange
+    .category-filter-column-wrapper
+      @extend .category-column-menu-wrapper
+      .category-filter-header
+        @extend .category-column-menu-header
+      .category-filter-menu
+        padding: 0 20px
+      .filter-colors
+        display: flex
+        flex-direction: column
+        label
+          padding-top: .5rem
+        .color-square
+          width: 15px
+          height: 15px
+          background-color: black
+          display: inline-block
+          margin-right: 8px
+          border: 1px solid lightgray
+      li
+        font-size: 14px
+        font-family: Oswald, sans-serif
+        font-weight: 300
+        text-transform: uppercase
+        color: $darkgrey
+        padding: 16px 20px
+        padding-left: 0
+        border-bottom: 1px solid #ececec
   .category-content-column
     .category-img-wrapper
       height: 288px

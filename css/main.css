@@ -600,13 +600,15 @@ section.new-products .new-products-item .add-to-basket .fa-eye:before {
   content: "";
 }
 
-.category-page-container .side-column .category-column-menu-wrapper {
+.category-page-container .side-column .category-column-menu-wrapper, .category-page-container .side-column .category-filter-column-wrapper {
+  border-top: 2px solid #ED8B5C;
   background-color: #ffffff;
+  margin-bottom: 30px;
 }
 .category-page-container .side-column .category-column-menu {
   padding: 0 20px;
 }
-.category-page-container .side-column .category-column-menu-header {
+.category-page-container .side-column .category-column-menu-header, .category-page-container .side-column .category-filter-column-wrapper .category-filter-header {
   padding-left: 16px;
   font-size: 16px;
   color: #444;
@@ -628,6 +630,39 @@ section.new-products .new-products-item .add-to-basket .fa-eye:before {
 }
 .category-page-container .side-column li a:hover {
   color: #ED8B5C;
+}
+.category-page-container .side-column .category-filter-column-wrapper .category-filter-menu {
+  padding: 0 20px;
+}
+.category-page-container .side-column .category-filter-column-wrapper .filter-colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.category-page-container .side-column .category-filter-column-wrapper .filter-colors label {
+  padding-top: 0.5rem;
+}
+.category-page-container .side-column .category-filter-column-wrapper .filter-colors .color-square {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  display: inline-block;
+  margin-right: 8px;
+  border: 1px solid lightgray;
+}
+.category-page-container .side-column .category-filter-column-wrapper li {
+  font-size: 14px;
+  font-family: Oswald, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #414141;
+  padding: 16px 20px;
+  padding-left: 0;
+  border-bottom: 1px solid #ececec;
 }
 .category-page-container .category-content-column .category-img-wrapper {
   height: 288px;

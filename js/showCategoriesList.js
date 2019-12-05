@@ -3,7 +3,6 @@
 let categoriesData = [];
 let productsData = [];
 let selectProduct = {};
-//comments
 let commentsData = [];
 
 const setDefaultData = () => {
