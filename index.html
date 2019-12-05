@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="node_modules/owl.carousel2/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/basket.css">
 </head>
 <body>
 <header id="header">
@@ -34,6 +35,8 @@
           </a>
         </div>
         <div class="col-md-6 top-form-col">
+
+
 <!--          <div class="form-row">-->
 <!--            <select name="category-filter" id="category-filter" class="col-4">-->
 <!--              <option>All categories</option>-->
@@ -76,7 +79,12 @@
 <!--            </ul>-->
 <!--          </div>-->
           <div class="cart-preview col-2">
-            <p><i class="fa fa-shopping-cart"></i> 0 item - $: 0</p>
+            <p class="shopping-cart" >
+
+              <i class="fa fa-shopping-cart"> </i>
+            <p class="cart-total-products"> &nbsp;0 &nbsp;<p> item - </p></p><p>$:</p>
+            <p class="cart-total-prise">0</p>
+            </p>
           </div>
         </div>
       </div>
@@ -253,7 +261,7 @@
                   <span class="control-label">Quantity</span>
                   <input id="quantityInput" type="number" min="1" value="1">
                 </div>
-                <div id="btnBuyCardProduct"></div>
+                <div id="btnBuyCardProduct" class='add-to-basket'></div>
               </div>
             </div>
           </div>
@@ -280,6 +288,99 @@
     </div>
   </div>
 </main>
+
+<!--cart-->
+<div class="basket-modal-container hide">
+  <div class="basket-close-modal"><img src="images/basket/close.png" alt="" > </div>
+  <div class="basket-modal">
+    <div class="basket-slider">
+
+      <!--        left part with products  -->
+      <div class="left-bsk-50">
+        <div class="card-part">
+          <div class="basket-container">
+          </div>
+          <div class="cart-menu">
+            <div class="cart-menu-container">
+              <div class="total-price"><h4>
+                Total amount: <span class="total-price-number"></span></h4>
+              </div>
+              <div><input  type="button" value="Checkout" class="checkout-oder">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--        right part with form  -->
+      <div class="right-bsk-50">
+        <div class="checkout">
+          <div class="checkout-flex-container">
+            <h4 class="personal-info">PERSONAL INFORMATION</h4>
+            <br>
+            <form name="makeorder">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control"  placeholder="First Name" name="firstname">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control"  placeholder="Last Name" name="lastname">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control"  placeholder="Phone number" name="phone">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control"  placeholder="E-mail" name="email">
+                </div>
+                <div class="form-group col-md-4">
+                  <p class="invalid-delivery">Select shipping methods:</p>
+                </div>
+                <div class="form-group col-md-2">
+                  <input class="form-check-input delivery" type="radio"  value="newP" name="delivery" id="newP">
+                  <p class="delivery-text"> <label for="newP"> New post</label></p>
+                  <input class="form-check-input delivery" type="radio"  value="Ukr" name="delivery" id="Ukr">
+                  <p class="delivery-text"><label for="Ukr">Ukr post</label> </p>
+                </div>
+                <div class="form-group col-md-4 enter-adress">
+                  <input type="text" class="form-control"  placeholder="City" name="city">
+                  <div class="heightBr"></div>
+                  <input type="text" class="form-control"  placeholder="Address" name="address">
+                </div>
+                <div class="form-group col-md-2 delivery-img">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <p class="invalid-payment">Payment method:</p>
+                </div>
+                <div class="form-group col-md-4">
+                  <input class="form-check-input payment" type="radio"  value="Privat24" name="payment"  id="privat">
+                  <p class="payment-text"><label for="privat">Privat 24</label></p>
+                  <input class="form-check-input payment" type="radio"  value="VisaMastercard" name="payment" id="Visa">
+                  <p class="payment-text" ><label for="Visa"> Visa/Mastercard</label></p>
+                  <input class="form-check-input payment" type="radio"  value="uponReceipt" name="payment" id="uponReceipt">
+                  <p class="payment-text"><label for="uponReceipt">Pay for the order upon receipt</label></p>
+                </div>
+                <div class="form-group col-md-4 payment-img">
+                </div>
+              </div>
+            </form>
+            <br>
+            <br>
+            <div class="form-button">
+              <input type="button" class="back-to-cart" value="Back to cart">
+              <input type="button" class="сonfirm" value="Сonfirm">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal big background-->
+  <div class="basket-modal-wrap">
+  </div>
+</div>
+<!-- end cart-->
 
 <footer class="main-footer">
   <div class="container">
@@ -373,6 +474,7 @@
   <script src="js/showNewProducts.js"></script>
   <script src="js/showProductCard.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/basket.js"></script>
 
 </body>
 </html>
