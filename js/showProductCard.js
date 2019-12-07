@@ -12,6 +12,7 @@ function findSelectedProductNumber(dataId) {
     console.log("Numder data id " + prodIndex);
     selectProduct = productsData[prodIndex];
     setInfoByProduct();
+    scrollOnTop();
 }
 
 // Change content on the page:
@@ -67,6 +68,9 @@ function setInfoByProduct() {
         "data-id": `${selectProduct.id}`,
     }).appendTo('#btnBuyCardProduct');
 
+
+
+
     // Cut text description
     let shortDescription = selectProduct.description.slice(0, 100);
 
@@ -88,12 +92,18 @@ function setInfoByProduct() {
                 "data-id": item.id,
                 "style": `background-color: ${item.color}`,
                 "class": 'color checkColor',
+                click: (event) => {
+                    findSelectedProductNumber(item.id)
+                }
             }).appendTo('#group-color');
         } else {
             $('<div/>', {
                 "data-id": item.id,
                 "style": `background-color: ${item.color}`,
                 "class": 'color',
+                click: (event) => {
+                    findSelectedProductNumber(item.id)
+                }
             }).appendTo('#group-color');
         }
     });

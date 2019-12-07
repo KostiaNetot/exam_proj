@@ -1,6 +1,7 @@
 $('a[href*="#"]')
 .not('[href="#"]')
 .not('[href="#0"]')
+.not('[href="#carouselExampleCaptions"]')
 .click(function(event) {
   if (
     location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
@@ -18,3 +19,10 @@ $('a[href*="#"]')
   }
 });
 $("a[href*='https']:not([href*='"+location.hostname+"'])").attr('rel','noreferrer');
+
+let scrollOnTop = () => {
+    $("body,html").animate({
+        scrollTop:0
+    }, 800);
+}
+
