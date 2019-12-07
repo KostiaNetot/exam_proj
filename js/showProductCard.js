@@ -43,7 +43,10 @@ function setInfoByProduct() {
     $('#group-color').html('');
     $('#slider-carousel-images').html('');
     //breadcrumb
-    $('#breadcrumb-link-category').html(`${selectProduct.category}`);
+    $('#breadcrumb-link-category').html(`${selectProduct.category}`).on('click', function() {
+        showCategoryPage(name, selectProduct.category);
+    });
+    
     $('#breadcrumb-link-products').html(`${selectProduct.name}`);
     // info about products
 
