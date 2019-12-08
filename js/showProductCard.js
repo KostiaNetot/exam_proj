@@ -228,3 +228,6 @@ let checkSimilarProduct = (product) => {
     return (similarProd);
 }
 
+$('.bannerAds').on('click', function() {
+    findSelectedProductNumber('6294331677');
+});
