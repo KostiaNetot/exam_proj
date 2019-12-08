@@ -97,9 +97,9 @@ let showBasket = () => {
             basketContainer.appendChild(basketProductContainer);
         })
 
-        document.querySelector('.total-price-number').innerHTML = totalPrice;
+        document.querySelector('.total-price-number').innerHTML = totalPrice.toFixed(2);
         document.querySelector('.cart-total-products').innerHTML = `&nbsp ${amountProducts} &nbsp`;
-        document.querySelector('.cart-total-prise').innerHTML = totalPrice;
+        document.querySelector('.cart-total-prise').innerHTML = totalPrice.toFixed(2);
 
         document.querySelectorAll('.quantity').forEach( (quantity) => {
             quantity.addEventListener('change', function () {

@@ -44,7 +44,7 @@ function setInfoByProduct() {
     $('#slider-carousel-images').html('');
     //breadcrumb
     $('#breadcrumb-link-category').html(`${selectProduct.category}`).on('click', function() {
-        showCategoryPage(name, selectProduct.category);
+        showCategoryPage(selectProduct.category);
     });
     
     $('#breadcrumb-link-products').html(`${selectProduct.name}`);

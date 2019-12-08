@@ -40,7 +40,7 @@ const createCategColumnList = (name, dataName, products) => {
     'data-name': dataName,
     click: function(e) {
       e.preventDefault();
-      showCategoryPage(name, dataName, products);
+      showCategoryPage(dataName);
     }
   });
   $('<li>', {
@@ -55,7 +55,7 @@ const createCategListItem = (name, dataName, icon, products) => {
     html: `<i class="fa ${icon}"></i> ${name}`,
     'data-name': dataName,
     click: function() {
-      showCategoryPage(name, dataName, products);
+      showCategoryPage(dataName);
     }
   }).appendTo('.v-megamenu');
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-const showCategoryPage = (name, dataName, products) => {
+const showCategoryPage = (dataName) => {
   changePageContent('category-page-container');
   $('.box-sort-by').html(formSelect());
 
@@ -85,6 +85,15 @@ const fillCategoryContainer = (arr) => {
     colorsCategory.push(obj.color);
   });
   setColorFilter(colorsCategory);
+
+  $('.item-name').off('click').on('click', function () {
+    let itemId = $(this).data('id');
+    findSelectedProductNumber(String(itemId));
+  });
+  $('.img-item-wrap').off('click').on('click', function () {
+    let itemId = $(this).data('id');
+    findSelectedProductNumber(String(itemId));
+  });
 };
 
 const setColorFilter = (arr) => {
@@ -104,7 +113,6 @@ const createProdItemWrapper = (obj) => {
     class: 'item col-xs-12 col-sm-6 col-md-4',
     append: createCategProdItem(obj)
   });
-
 };
 
 const createCategProdItem = (obj) => {
@@ -112,8 +120,8 @@ const createCategProdItem = (obj) => {
     <div class="img-item-wrap" data-id="${obj.id}">
       <img alt="item-pic" src="${obj.images[0]}"></img>
     </div>
-    <div class="text-item-wrap" data-id="${obj.id}">
-      <p class="item-name">${obj.name}</p>
+    <div class="text-item-wrap">
+      <p data-id="${obj.id}" class="item-name">${obj.name}</p>
       <p class="item-price">$<span>${obj.price}</span></p>
     </div>    
   `;
