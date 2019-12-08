@@ -1,6 +1,6 @@
 'use strict';
 
-const showCategoryPage = (name, dataName, products) => {
+const showCategoryPage = (dataName) => {
   changePageContent('category-page-container');
   $('.box-sort-by').html(formSelect());
 
