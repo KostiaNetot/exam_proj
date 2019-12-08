@@ -1,8 +1,8 @@
 - button filter
 - all products in category page
-- window (document) position
+- window (document) position =============================DONE
 - !!!!!!!!!!!!!!!!filter!!!!
-- all links work
+- all links work  ================================DONE
 - comments in localStorage
 - scroll - unscroll!!!
 - cart clean after order
@@ -12,6 +12,7 @@
 - modal: "Product added to cart...."
 - modal page onload.. add localStorage, lera knows)
     'Subscribe', in footer - ????
-- FOOTER ????????    ======================DONE
+- FOOTER ????????    =========================================DONE
 - Headers in main slider
-- handler on product card in category to product page, and hover......
+- handler on product card in category =======================DONE
+- Hover eff item prod card
