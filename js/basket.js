@@ -291,11 +291,10 @@ let confirmOder = () => {
     paymentValidate(paymentMethod);
     if(emailVaidate(email) && nameValidate(firstName) && lastNameValidate(lastName) && phoneValidate(phone) && paymentMethodValidate(paymentMethod) && cityValidate(city) && addressValidate(address) && deliveryValidate(delivery) && paymentValidate(paymentMethod)){
 
-        // document.querySelector('.right-bsk-50').setAttribute('class', 'hide');
-
         document.querySelector('.right-bsk-50').innerHTML = `<div class="for-processing"><div class="processingorder">Your order has been sent for processing.</div></div>`;
         let remoteLocalStorage = [];
         localStorage.setItem('products', (JSON.stringify(remoteLocalStorage)));
+        setTimeout(() => {location.reload()}, 4000);
     }
 }
 
