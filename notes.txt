@@ -5,12 +5,12 @@
 - all links work  ================================DONE
 - comments in localStorage
 - scroll - unscroll!!!
-- cart clean after order
+- cart clean after order================================DONE
 - hover, cursor pointer***
 - products in cart WTF!!)))
-- set timeOut - close cart window
+- set timeOut - close cart window================================DONE
 - modal: "Product added to cart...."
-- modal page onload.. add localStorage, lera knows)
+- modal page onload.. add localStorage, lera knows)================================DONE
     'Subscribe', in footer - ????
 - FOOTER ????????    =========================================DONE
 - Headers in main slider
