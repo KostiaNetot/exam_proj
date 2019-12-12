@@ -7,7 +7,7 @@
 - scroll - unscroll!!!
 - cart clean after order================================DONE
 - hover, cursor pointer***
-- products in cart WTF!!)))
+- products in cart WTF!!)))================================DONE
 - set timeOut - close cart window================================DONE
 - modal: "Product added to cart...."
 - modal page onload.. add localStorage, lera knows)================================DONE
@@ -15,4 +15,4 @@
 - FOOTER ????????    =========================================DONE
 - Headers in main slider
 - handler on product card in category =======================DONE
-- Hover eff item prod card
+- Hover eff item prod card================================DONE
