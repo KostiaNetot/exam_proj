@@ -210,12 +210,12 @@
 
 .delivery {
     position: absolute;
-    margin: -7px 0 0 -20px;
+    margin: -11px 0 0 -20px;
 }
 
 .payment {
     position: absolute;
-    margin: -7px 0 0 -20px;
+    margin: -11px 0 0 -20px;
 }
 
 .heightBr {
@@ -257,4 +257,12 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.cart-cursor {
+    cursor: pointer;
+}
+
+.fa-shopping-cart:hover {
+    height: 20px;
 }

@@ -33,10 +33,18 @@ $('#btnBuyCardProduct').on('click', '.add-to-basket', function (button){
                         parseLocalStorage = [];
                         parseLocalStorage.push(elem);
                     } else {
-                        parseLocalStorage.push(elem);
+                        let counter = 0;
+                        parseLocalStorage.forEach((item) => {
+                            if(item.id === idOfProducts) {
+                                counter++;                            }
+                        })
+                        if (counter === 0){
+                            parseLocalStorage.push(elem);
+                        } else {
+                            alert('Товар уже добавлен в корзину!');
+                        }
                     }
                     localStorage.setItem('products', (JSON.stringify(parseLocalStorage)));
-                    console.log(elem);
                     showBasket();
                 }
             })
