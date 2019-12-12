@@ -33,10 +33,18 @@ $('#btnBuyCardProduct').on('click', '.add-to-basket', function (button){
                         parseLocalStorage = [];
                         parseLocalStorage.push(elem);
                     } else {
-                        parseLocalStorage.push(elem);
+                        let counter = 0;
+                        parseLocalStorage.forEach((item) => {
+                            if(item.id === idOfProducts) {
+                                counter++;                            }
+                        })
+                        if (counter === 0){
+                            parseLocalStorage.push(elem);
+                        } else {
+                            alert('Товар уже добавлен в корзину!');
+                        }
                     }
                     localStorage.setItem('products', (JSON.stringify(parseLocalStorage)));
-                    console.log(elem);
                     showBasket();
                 }
             })
@@ -291,11 +299,10 @@ let confirmOder = () => {
     paymentValidate(paymentMethod);
     if(emailVaidate(email) && nameValidate(firstName) && lastNameValidate(lastName) && phoneValidate(phone) && paymentMethodValidate(paymentMethod) && cityValidate(city) && addressValidate(address) && deliveryValidate(delivery) && paymentValidate(paymentMethod)){
 
-        // document.querySelector('.right-bsk-50').setAttribute('class', 'hide');
-
         document.querySelector('.right-bsk-50').innerHTML = `<div class="for-processing"><div class="processingorder">Your order has been sent for processing.</div></div>`;
         let remoteLocalStorage = [];
         localStorage.setItem('products', (JSON.stringify(remoteLocalStorage)));
+        setTimeout(() => {location.reload()}, 4000);
     }
 }
 
