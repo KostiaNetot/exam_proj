@@ -1,3 +1,28 @@
+// push notification
+
+let notificationAddToCart = () => {
+    let chips = document.createElement('div');
+    chips.classList.add('chips');
+    chips.classList.add('chipsAdd');
+    chips.innerHTML = 'Product added to cart!';
+    document.body.appendChild(chips);
+    setTimeout(() => {
+        chips.remove();
+    }, 4000)
+}
+
+let notificationNotAddToCart = () => {
+    let chips = document.createElement('div');
+    chips.classList.add('chips');
+    chips.classList.add('chipsNot');
+    chips.innerHTML = 'The product is already in the cart';
+    document.body.appendChild(chips);
+    setTimeout(() => {
+        chips.remove();
+    }, 4000)
+}
+
+
 let closeModal = () => {
     let modal = document.querySelector('.basket-modal-container');
     modal.style.display = 'none';
@@ -40,8 +65,9 @@ $('#btnBuyCardProduct').on('click', '.add-to-basket', function (button){
                         })
                         if (counter === 0){
                             parseLocalStorage.push(elem);
+                            notificationAddToCart();
                         } else {
-                            alert('Товар уже добавлен в корзину!');
+                            notificationNotAddToCart();
                         }
                     }
                     localStorage.setItem('products', (JSON.stringify(parseLocalStorage)));
@@ -299,6 +325,21 @@ let confirmOder = () => {
     paymentValidate(paymentMethod);
     if(emailVaidate(email) && nameValidate(firstName) && lastNameValidate(lastName) && phoneValidate(phone) && paymentMethodValidate(paymentMethod) && cityValidate(city) && addressValidate(address) && deliveryValidate(delivery) && paymentValidate(paymentMethod)){
 
+       // ----------
+        let formData = new FormData();
+        formData.append("order", localStorage.getItem('products'));
+        formData.append("Name", firstName);
+        formData.append("Last Name", lastName);
+        formData.append("Phone", phone);
+        formData.append("email", email);
+        formData.append("city", city);
+        formData.append("address", address);
+        formData.append("delivery", delivery);
+        formData.append("delivery", delivery);
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "index.html");
+        xhr.send(formData);
+// ----------
         document.querySelector('.right-bsk-50').innerHTML = `<div class="for-processing"><div class="processingorder">Your order has been sent for processing.</div></div>`;
         let remoteLocalStorage = [];
         localStorage.setItem('products', (JSON.stringify(remoteLocalStorage)));
@@ -307,6 +348,5 @@ let confirmOder = () => {
 }
 
 document.querySelector('.сonfirm').onclick = confirmOder;
-
 
 
