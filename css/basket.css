@@ -266,3 +266,28 @@
 .fa-shopping-cart:hover {
     height: 20px;
 }
+
+/*chips*/
+
+.chips {
+    font-size:110%;
+    padding: 5px 10px;
+    margin: 10px 0;
+    background: #ee802f;
+    border-radius: 6px;
+    width: auto;
+    position: fixed;
+    top: 65px;
+    left: 43%;
+}
+
+.chipsAdd {
+    background: #a8a8a8;
+    color: white;
+}
+
+.chipsNot {
+    background: #rgb(237, 139, 92);
+    color: white;
+    left: 41%;
+}
