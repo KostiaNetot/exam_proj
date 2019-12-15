@@ -4,12 +4,10 @@
 let addToCartProductData =[];
 
 function findSelectedProductNumber(dataId) {
-    console.log(productsData);
     changePageContent('wrapper-product-card');
     let prodIndex = productsData.map(function (obj) {
         return obj.id;
     }).indexOf(dataId);
-    console.log("Numder data id " + prodIndex);
     selectProduct = productsData[prodIndex];
     setInfoByProduct();
     scrollOnTop();
@@ -133,6 +131,7 @@ function setInfoByProduct() {
 
 let startOwlCarousel = () => {
     $('.owl-carousel').trigger('destroy.owl.carousel');
+    $('.owl-carousel').removeClass('owl-hidden');
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
@@ -144,7 +143,9 @@ let startOwlCarousel = () => {
             },
         }
     })
+
 }
+
 
 let findIndexCommentOnData = (id) => {
     let comIndex = commentsData.map(function (obj) {
@@ -204,8 +205,15 @@ $('#btnCom').off('click').on('click', function () {
 
         commentsData[idComProd].comments.push(msg);
         showComments(selectProduct.id);
+        addCommentsToLOcalStorage();
     }
 });
+
+let addCommentsToLOcalStorage = () => {
+   let jsonComments = JSON.stringify(commentsData);
+   localStorage.setItem('comments', jsonComments);
+   console.log(jsonComments);
+}
 
 let validationComments = (value, id, text) => {
     if (!value) {

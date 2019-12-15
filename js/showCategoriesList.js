@@ -22,7 +22,11 @@ const setDefaultData = () => {
 };
 
 let loadComments = (m) => {
-  commentsData = m;
+  if (!localStorage.comments) {
+    commentsData = m;
+  } else {
+    commentsData = JSON.parse(localStorage.comments);
+  }
 };
 
 const getValuesFromCategs = (categories, products) => {

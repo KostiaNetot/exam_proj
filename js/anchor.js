@@ -25,4 +25,3 @@ let scrollOnTop = () => {
         scrollTop:0
     }, 800);
 }
-
