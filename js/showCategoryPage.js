@@ -7,13 +7,73 @@ const showCategoryPage = (dataName) => {
   let checkedCategoryProds = sortArrayDataByCategory(dataName);
   let categoryPic = document.getElementById('category-main-pic');
   let imgPath = getValueFromArr(categoriesData, dataName, 'picture');
-      categoryPic.src = imgPath;
+  categoryPic.src = imgPath;
   $('#breadcrumb-categ').html(dataName);
   $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`);
 
-  fillCategoryContainer(checkedCategoryProds);
+  fillCategoryContainer(checkedCategoryProds, dataName);
   checkSelectSort(checkedCategoryProds);
-  checkFilters();
+  initPriceSlider(checkedCategoryProds);
+  setFilterBtn(checkedCategoryProds, dataName)
+};
+
+const setFilterBtn = (arr, dataName) => {
+  $('#applyFilter').attr('data-name', dataName).off().on('click', () => {
+    applyFilters(arr, dataName);
+  });
+  $('#resetFilter').on('click', () => {
+    fillCategoryContainer(arr, dataName);
+  });
+};
+
+const applyFilters = (arr, data) => {
+  let filteredArr = [];
+  let inputs = document.forms['filter-colors'].querySelectorAll('input');
+  let colorValues = [];
+  let priceDiapason = $('#slider-range').slider('values');
+  [].forEach.call(inputs, (elem) => {
+    if (elem.checked) {
+      colorValues.push(elem.value);
+    }
+  });
+  arr.forEach((obj) => {
+    if ( (colorValues.indexOf(obj.color) !== -1) && (obj.price >= priceDiapason[0] && obj.price <= priceDiapason[1]) ) {
+      filteredArr.push(obj);
+    }
+  });
+  fillByFiltered(filteredArr);
+};
+
+const fillByFiltered = (arr) => {
+  let categProdWrapper = $('#category-products-grid');
+  categProdWrapper.html('');
+  arr.forEach((obj) => {
+    categProdWrapper.append(createProdItemWrapper(obj));
+  });
+};
+
+const getMaxPrice = (arr) => {
+  return Math.max.apply(Math, arr.map((obj) => { return obj.price; }))
+};
+
+const priceTopRound = (val) => {
+  return Math.ceil(val / 100) * 100;
+};
+
+const initPriceSlider = (arr) => {
+  let maxPrice = getMaxPrice(arr);
+  maxPrice = priceTopRound(maxPrice);
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: maxPrice,
+    values: [ 0, maxPrice ],
+    slide: function( event, ui ) {
+      $( "#price" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    }
+  });
+  $( "#price" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+    " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 };
 
 const checkSelectSort = (arr) => {
@@ -23,12 +83,12 @@ const checkSelectSort = (arr) => {
   })
 };
 
-const checkFilters = () => {
-  let colorsFilter = document.forms["filter-colors"];
-  colorsFilter.addEventListener('change', () => {
-    console.log(colorsFilter.elements);
-  });
-};
+// const checkFilters = () => {
+//   let colorsFilter = document.forms["filter-colors"];
+//   colorsFilter.addEventListener('change', () => {
+//     console.log(colorsFilter.elements.value);
+//   });
+// };
 
 const checkSelectValue = (val, arr) => {
   let sortedArr;
@@ -48,7 +108,7 @@ const checkSelectValue = (val, arr) => {
     case 'a-z':
       sortedArr = arr.sort((a, b) => {
         let nameA = a.name.toLowerCase(),
-            nameB = b.name.toLowerCase();
+          nameB = b.name.toLowerCase();
         if (nameA < nameB) {
           return -1;
         }
@@ -76,7 +136,7 @@ const checkSelectValue = (val, arr) => {
   }
 };
 
-const fillCategoryContainer = (arr) => {
+const fillCategoryContainer = (arr, dataName) => {
   let categProdWrapper = $('#category-products-grid');
   let colorsCategory = [];
   categProdWrapper.html('');
@@ -84,7 +144,9 @@ const fillCategoryContainer = (arr) => {
     categProdWrapper.append(createProdItemWrapper(obj));
     colorsCategory.push(obj.color);
   });
-  setColorFilter(colorsCategory);
+  setColorFilter(colorsCategory, arr, dataName);
+  ////Price filter....
+  // initPriceSlider();
 
   $('.item-name').off('click').on('click', function () {
     let itemId = $(this).data('id');
@@ -96,7 +158,7 @@ const fillCategoryContainer = (arr) => {
   });
 };
 
-const setColorFilter = (arr) => {
+const setColorFilter = (arr, arr1, dataName) => {
   arr = removeSpareFromArray(arr);
   $('form[name="filter-colors"]').html('');
   arr.forEach((color) => {
@@ -154,6 +216,6 @@ const getValueFromArr = (arr, key, need) => {
 
 const colorCheckboxes = (color) => {
   return `
-    <label><input value="${color}" type="checkbox"><span class="color-square" style="background-color: ${color}"></span>${color}</label>
+    <label><input value="${color}" checked type="checkbox"><span class="color-square" style="background-color: ${color}"></span>${color}</label>
    `;
 };

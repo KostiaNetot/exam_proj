@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
     "owl.carousel2": "^2.2.1",
     "popper.js": "^1.16.0"
   },
