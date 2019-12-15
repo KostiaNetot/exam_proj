@@ -11,3 +11,12 @@ $( function() {
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
         " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 } );
+
+
+
+// Get range values
+
+document.querySelector(".filter-btn").onclick = function () {
+    let values = $( "#slider-range" ).slider( "values" );
+    console.log(values);
+}
