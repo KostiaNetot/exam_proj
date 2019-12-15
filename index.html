@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/basket.css">
   <link rel="stylesheet" href="css/modal_email.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/filter.css">
+
 </head>
 <body>
 <header id="header">
@@ -194,8 +197,19 @@
               </form>
             </ul>
             <li class="price-filter-menu">Price:</li>
+            <br>
+            <p>
+              <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </p>
+            <br>
+            <div id="slider-range"></div>
 <!--            price slider here-->
           </ul>
+          <div class="width-filter">
+
+          <input type="button" class="filter-btn" value="Confirm">
+
+          </div>
         </ul>
       </div>
       <div class="category-content-column col-xs-12 col-sm-8 col-md-9">
@@ -452,13 +466,16 @@
   </div>
 </footer>
 
+
   <!--   Libraries     -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/owl.carousel2/dist/owl.carousel.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
 
   <!--   Our scripts     -->
+<script src="js/priseRange.js"></script>
   <script src="js/sliders.js"></script>
   <script src="js/CarouselNewProd.js"></script>
   <script src="js/newProdSlider.js"></script>
