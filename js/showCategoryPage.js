@@ -11,10 +11,37 @@ const showCategoryPage = (dataName) => {
   $('#breadcrumb-categ').html(dataName);
   $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`);
 
+  setViewBtns();
   fillCategoryContainer(checkedCategoryProds, dataName);
-  checkSelectSort(checkedCategoryProds);
-  initPriceSlider(checkedCategoryProds);
-  setFilterBtn(checkedCategoryProds, dataName)
+  setSortNFilter(checkedCategoryProds, dataName);
+};
+
+function setViewBtns() {
+  let listViewBtn = document.querySelector('.fa-th-list');
+  let gridViewBtn = document.querySelector('.fa-th');
+      listViewBtn.addEventListener('click', showListView);
+      gridViewBtn.addEventListener('click', showListView);
+};
+
+function showListView() {
+  let cards = document.querySelectorAll('.item');
+  if (this.classList.contains('fa-th-list')) {
+    [].forEach.call(cards, (card) => {
+      card.className = 'item item-list'
+    });
+  } else {
+    [].forEach.call(cards, (card) => {
+      card.className = 'item col-xs-12 col-sm-6 col-md-4';
+    });
+  }
+  document.querySelector('.fa-th-list').classList.toggle('active-color');
+  document.querySelector('.fa-th').classList.toggle('active-color');
+}
+
+const setSortNFilter = (arr, dataName) => {
+  initPriceSlider(arr);
+  setFilterBtn(arr, dataName);
+  checkSelectSort(arr, dataName);
 };
 
 const setFilterBtn = (arr, dataName) => {
@@ -45,10 +72,16 @@ const applyFilters = (arr, data) => {
 };
 
 const fillByFiltered = (arr) => {
+  let cardClassName;
   let categProdWrapper = $('#category-products-grid');
+  if (categProdWrapper.children().hasClass('item-list')) {
+    cardClassName = 'item item-list';
+  } else {
+    cardClassName = 'item col-xs-12 col-sm-6 col-md-4';
+  }
   categProdWrapper.html('');
   arr.forEach((obj) => {
-    categProdWrapper.append(createProdItemWrapper(obj));
+    categProdWrapper.append(createProdItemWrapper(obj, cardClassName));
   });
 };
 
@@ -77,20 +110,17 @@ const initPriceSlider = (arr) => {
 };
 
 const checkSelectSort = (arr) => {
+  const defArr = [];
+  arr.forEach((obj) => {
+    defArr.push(obj);
+  });
   let selectSort = document.forms['sort-by-form']['sort-by'];
   selectSort.addEventListener('change', function () {
-    checkSelectValue(selectSort.value, arr);
+    checkSelectValue(selectSort.value, arr, defArr);
   })
 };
 
-// const checkFilters = () => {
-//   let colorsFilter = document.forms["filter-colors"];
-//   colorsFilter.addEventListener('change', () => {
-//     console.log(colorsFilter.elements.value);
-//   });
-// };
-
-const checkSelectValue = (val, arr) => {
+const checkSelectValue = (val, arr, defArr) => {
   let sortedArr;
   switch (val) {
     case 'low-high':
@@ -133,20 +163,27 @@ const checkSelectValue = (val, arr) => {
       });
       fillCategoryContainer(sortedArr.reverse());
       break;
+    case 'relevance':
+      fillCategoryContainer(defArr);
+      break;
   }
 };
 
 const fillCategoryContainer = (arr, dataName) => {
   let categProdWrapper = $('#category-products-grid');
+  let cardClassName;
+  if (categProdWrapper.children().hasClass('item-list')) {
+    cardClassName = 'item item-list';
+  } else {
+    cardClassName = 'item col-xs-12 col-sm-6 col-md-4';
+  }
   let colorsCategory = [];
   categProdWrapper.html('');
   arr.forEach((obj) => {
-    categProdWrapper.append(createProdItemWrapper(obj));
+    categProdWrapper.append(createProdItemWrapper(obj, cardClassName));
     colorsCategory.push(obj.color);
   });
   setColorFilter(colorsCategory, arr, dataName);
-  ////Price filter....
-  // initPriceSlider();
 
   $('.item-name').off('click').on('click', function () {
     let itemId = $(this).data('id');
@@ -170,14 +207,18 @@ const removeSpareFromArray = (arr) => {
   return arr.filter((item, index) => arr.indexOf(item) === index);
 };
 
-const createProdItemWrapper = (obj) => {
+const createProdItemWrapper = (obj, className) => {
   return $('<div>', {
-    class: 'item col-xs-12 col-sm-6 col-md-4',
+    class: className,
     append: createCategProdItem(obj)
   });
 };
 
 const createCategProdItem = (obj) => {
+  let sliced = obj.description.slice(0, 250);
+  if (sliced.length < obj.description.length) {
+    sliced += '...';
+  }
   return `
     <div class="img-item-wrap" data-id="${obj.id}">
       <img alt="item-pic" src="${obj.images[0]}"></img>
@@ -185,6 +226,7 @@ const createCategProdItem = (obj) => {
     <div class="text-item-wrap">
       <p data-id="${obj.id}" class="item-name">${obj.name}</p>
       <p class="item-price">$<span>${obj.price}</span></p>
+      <p class="item-description hidden">${sliced}</p>
     </div>    
   `;
 };

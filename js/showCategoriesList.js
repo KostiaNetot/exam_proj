@@ -8,7 +8,6 @@ let commentsData = [];
 const setDefaultData = () => {
   let fetchCategs = fetch('data/categories.json');
   let fetchProds = fetch('data/products.json');
-//load comments
   let fetchComments = fetch('data/comments.json');
 
   Promise.all([fetchCategs, fetchProds, fetchComments]).then(values => {

@@ -668,6 +668,7 @@ section.new-products .new-products-item .add-to-basket .fa-eye:before {
 }
 .category-page-container .side-column .category-filter-column-wrapper .filter-colors label {
   padding-top: 0.5rem;
+  cursor: pointer;
 }
 .category-page-container .side-column .category-filter-column-wrapper .filter-colors .color-square {
   width: 15px;
@@ -675,7 +676,13 @@ section.new-products .new-products-item .add-to-basket .fa-eye:before {
   background-color: black;
   display: inline-block;
   margin-right: 8px;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
+}
+.category-page-container .side-column .category-filter-column-wrapper .filter-colors input {
+  display: none;
+}
+.category-page-container .side-column .category-filter-column-wrapper .filter-colors input:checked + span {
+  border: 2px solid blue;
 }
 .category-page-container .side-column .category-filter-column-wrapper .price-input {
   margin-bottom: 16px;
@@ -791,6 +798,49 @@ section.new-products .new-products-item .add-to-basket .fa-eye:before {
 .category-page-container .item .text-item-wrap .item-price {
   font: 14px Oswald, sans-serif;
   color: #ED8B5C;
+}
+.category-page-container .item.item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.category-page-container .item.item-list .img-item-wrap {
+  width: 270px;
+  height: 270px;
+  border-right: 1px solid #ededed;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+.category-page-container .item.item-list .text-item-wrap {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+  background-color: #ffffff;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.category-page-container .item.item-list .text-item-wrap p {
+  margin-bottom: 8px;
+}
+.category-page-container .item.item-list .text-item-wrap .item-name {
+  font-size: 18px;
+  color: #696969;
+}
+.category-page-container .item.item-list .text-item-wrap .item-name:hover {
+  color: #ED8B5C;
+}
+.category-page-container .item.item-list .hidden {
+  display: block;
 }
 
 .wrapper-product-card, .category-page-container {

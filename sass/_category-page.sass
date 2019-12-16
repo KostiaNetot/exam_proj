@@ -37,13 +37,18 @@
         flex-direction: column
         label
           padding-top: .5rem
+          cursor: pointer
         .color-square
           width: 15px
           height: 15px
           background-color: black
           display: inline-block
           margin-right: 8px
-          border: 1px solid lightgray
+          border: 2px solid lightgray
+        input
+          display: none
+        input:checked + span
+          border: 2px solid blue
       .price-input
         margin-bottom: 16px
       .ui-slider
@@ -118,3 +123,28 @@
       .item-price
         font: 14px Oswald, sans-serif
         color: $orange
+  .item.item-list
+    display: flex
+    flex-direction: row
+    width: 100%
+    margin-bottom: 20px
+    overflow: hidden
+    .img-item-wrap
+      width: 270px
+      height: 270px
+      border-right: 1px solid lighten(lightgray, 10%)
+      flex: none
+    .text-item-wrap
+      justify-content: flex-start
+      text-align: left
+      background-color: $white
+      align-items: flex-start
+      p
+        margin-bottom: 8px
+      .item-name
+        font-size: 18px
+        color: #696969
+        &:hover
+          color: $orange
+    .hidden
+      display: block
