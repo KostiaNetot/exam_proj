@@ -3,16 +3,16 @@
 - window (document) position =============================DONE
 - !!!!!!!!!!!!!!!!filter!!!!
 - all links work  ================================DONE
-- comments in localStorage
+- comments in localStorage =======================DONE
 - scroll - unscroll!!!
 - cart clean after order================================DONE
 - hover, cursor pointer***
 - products in cart WTF!!)))================================DONE
 - set timeOut - close cart window================================DONE
-- modal: "Product added to cart...."
+- modal: "Product added to cart...." ============================DONE
 - modal page onload.. add localStorage, lera knows)================================DONE
     'Subscribe', in footer - ????
 - FOOTER ????????    =========================================DONE
-- Headers in main slider
+- Headers in main slider =====================================DONE
 - handler on product card in category =======================DONE
 - Hover eff item prod card================================DONE
