@@ -1,4 +1,3 @@
-- button filter
 - all products in category page
 - window (document) position =============================DONE
 - !!!!!!!!!!!!!!!!filter!!!!
