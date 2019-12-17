@@ -1,6 +1,7 @@
 'use strict';
 
 const showCategoryPage = (dataName) => {
+  filtered = false;
   changePageContent('category-page-container');
   $('.box-sort-by').html(formSelect());
   checkedCateg = sortArrayDataByCategory(dataName);
@@ -9,11 +10,14 @@ const showCategoryPage = (dataName) => {
   let imgPath = getValueFromArr(categoriesData, dataName, 'picture');
   categoryPic.src = imgPath;
   $('#breadcrumb-categ').html(dataName);
-  $('#prod-amount-text').html(`There are ${checkedCateg.length} products`);
-
+  setAmountHeader(checkedCateg);
   setViewBtns();
   fillCategoryContainer(checkedCateg, dataName);
   setSortNFilter(checkedCateg, dataName);
+};
+
+const setAmountHeader = (arr) => {
+  $('#prod-amount-text').html(`There are ${arr.length} products`);
 };
 
 function setViewBtns() {
@@ -24,18 +28,20 @@ function setViewBtns() {
 };
 
 function showListView() {
-  let cards = document.querySelectorAll('.item');
-  if (this.classList.contains('fa-th-list')) {
-    [].forEach.call(cards, (card) => {
-      card.className = 'item item-list'
-    });
-  } else {
-    [].forEach.call(cards, (card) => {
-      card.className = 'item col-xs-12 col-sm-6 col-md-4';
-    });
+  if (!this.classList.contains('active-color')) {
+    let cards = document.querySelectorAll('.item');
+    if (this.classList.contains('fa-th-list')) {
+      [].forEach.call(cards, (card) => {
+        card.className = 'item item-list'
+      });
+    } else {
+      [].forEach.call(cards, (card) => {
+        card.className = 'item col-xs-12 col-sm-6 col-md-4';
+      });
+    }
+    document.querySelector('.fa-th-list').classList.toggle('active-color');
+    document.querySelector('.fa-th').classList.toggle('active-color');
   }
-  document.querySelector('.fa-th-list').classList.toggle('active-color');
-  document.querySelector('.fa-th').classList.toggle('active-color');
 }
 
 const setSortNFilter = (arr, dataName) => {
@@ -64,11 +70,15 @@ const applyFilters = (arr, data) => {
       colorValues.push(elem.value);
     }
   });
-
+  if (filtered) {
+    changedCateg = checkedCateg;
+  }
   changedCateg = changedCateg.filter((obj) => {
     return (colorValues.indexOf(obj.color) !== -1) && (obj.price >= priceDiapason[0] && obj.price <= priceDiapason[1]);
   });
   fillByFiltered(changedCateg);
+  setAmountHeader(changedCateg);
+  filtered = true;
 };
 
 const fillByFiltered = (arr) => {
@@ -179,8 +189,10 @@ const fillCategoryContainer = (arr, dataName) => {
   let colorsCategory = [];
   categProdWrapper.html('');
   arr.forEach((obj) => {
-    categProdWrapper.append(createProdItemWrapper(obj, cardClassName));
+    let item = createProdItemWrapper(obj, cardClassName);
+    categProdWrapper.append(item);
     colorsCategory.push(obj.color);
+    setHandler(item);
   });
   setColorFilter(colorsCategory, arr, dataName);
 
@@ -192,6 +204,11 @@ const fillCategoryContainer = (arr, dataName) => {
     let itemId = $(this).data('id');
     findSelectedProductNumber(String(itemId));
   });
+};
+
+const setHandler = (item) => {
+  item.off().on('mouseenter', '.img-item-wrap', togglePicture);
+  item.on('mouseleave', '.img-item-wrap', togglePicture);
 };
 
 const setColorFilter = (arr, arr1, dataName) => {
@@ -209,7 +226,7 @@ const removeSpareFromArray = (arr) => {
 const createProdItemWrapper = (obj, className) => {
   return $('<div>', {
     class: className,
-    append: createCategProdItem(obj)
+    append: createCategProdItem(obj),
   });
 };
 
@@ -221,6 +238,7 @@ const createCategProdItem = (obj) => {
   return `
     <div class="img-item-wrap" data-id="${obj.id}">
       <img alt="item-pic" src="${obj.images[0]}"></img>
+      <img alt="item-pic" class="transparent" src="${obj.images[1]}"></img>
     </div>
     <div class="text-item-wrap">
       <p data-id="${obj.id}" class="item-name">${obj.name}</p>

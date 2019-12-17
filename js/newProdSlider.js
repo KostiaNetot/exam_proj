@@ -23,8 +23,8 @@ function makeSettings(categories, products) {
     let dataId = this.getAttribute('data-id');
     findSelectedProductNumber(dataId);
   });
-  // $('.new-products').on('mouseover', '.prod-btn', showSecondPic);
-  // $('.new-products').on('mouseout', '.prod-btn', showFirstPic);
+  $('.new-products').off().on('mouseenter', '.item-img-wrapper', togglePicture);
+  $('.new-products').on('mouseleave', '.item-img-wrapper', togglePicture);
 }
 
 function setNewProdSlider() {
@@ -36,10 +36,17 @@ function setNewProdSlider() {
   });
 }
 
-function showSecondPic() {
-  console.log('showSecondPic');
+function togglePicture() {
+  let pictures = this.querySelectorAll('img');
+  pictures.forEach((img) => {
+    img.classList.toggle('transparent');
+  })
 }
 
-function showFirstPic() {
-  console.log('showFirstPic');
-}
+// function showSecondPic() {
+//   console.log(this);
+// }
+//
+// function showFirstPic() {
+//   console.log('showFirstPic');
+// }

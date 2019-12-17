@@ -45,7 +45,7 @@ const createNewProdItem = (prodObj) => {
       <div class="top-side">
         <div class="item-img-wrapper">
           <img src=${prodObj.images[0]} alt="pic" class="item-pic">
-          <img src=${prodObj.images[1]} alt="pic" class="second-pic">
+          <img src=${prodObj.images[1]} alt="pic" class="item-pic transparent">
         </div>
         <div class="item-text-wrapper">
           <h5>${prodObj.name}</h5>
