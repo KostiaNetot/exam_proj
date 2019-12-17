@@ -19,11 +19,11 @@ function makeSettings(categories, products) {
   productsData = products;
   getValuesFromCategs();
   setNewProdSlider();
-  $('.new-products').on('click', '.prod-btn', function () {
+  $('.new-products').off().on('click', '.prod-btn', function () {
     let dataId = this.getAttribute('data-id');
     findSelectedProductNumber(dataId);
   });
-  $('.new-products').off().on('mouseenter', '.item-img-wrapper', togglePicture);
+  $('.new-products').on('mouseenter', '.item-img-wrapper', togglePicture);
   $('.new-products').on('mouseleave', '.item-img-wrapper', togglePicture);
 }
 
@@ -42,11 +42,3 @@ function togglePicture() {
     img.classList.toggle('transparent');
   })
 }
-
-// function showSecondPic() {
-//   console.log(this);
-// }
-//
-// function showFirstPic() {
-//   console.log('showFirstPic');
-// }
