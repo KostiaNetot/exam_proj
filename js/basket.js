@@ -250,8 +250,12 @@ let lastNameValidate = (lastName) => {
 }
 
 let phoneValidate = (phone) => {
+    if (phone.length === 10 && phone[0] == '0'){
+        phone = '+38' + phone;
+    }
+    let phoneValidShot= phone.match(/^([0|\+[0-9]{1,5})?([0-9]{10})$/);
     let phoneValid = phone.match(/^\+380\d{3}\d{2}\d{2}\d{2}$/);
-    if (phoneValid === null) {
+    if (phoneValid === null || phoneValidShot === null) {
         document.forms.makeorder.elements.phone.setAttribute('class', 'form-control is-invalid');
         return false
     } else {
@@ -328,7 +332,6 @@ let confirmOder = () => {
     paymentValidate(paymentMethod);
     if(emailVaidate(email) && nameValidate(firstName) && lastNameValidate(lastName) && phoneValidate(phone) && paymentMethodValidate(paymentMethod) && cityValidate(city) && addressValidate(address) && deliveryValidate(delivery) && paymentValidate(paymentMethod)){
 
-       // ----------
         let formData = new FormData();
         formData.append("order", localStorage.getItem('products'));
         formData.append("Name", firstName);
@@ -342,7 +345,7 @@ let confirmOder = () => {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "index.html");
         xhr.send(formData);
-// ----------
+
         document.querySelector('.right-bsk-50').innerHTML = `<div class="for-processing"><div class="processingorder">Your order has been sent for processing.</div></div>`;
         let remoteLocalStorage = [];
         localStorage.setItem('products', (JSON.stringify(remoteLocalStorage)));
