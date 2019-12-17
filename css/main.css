@@ -29,6 +29,10 @@ input, button {
   display: none;
 }
 
+.unscroll {
+  overflow-y: hidden;
+}
+
 .main-footer .social-icons-footer a {
   display: -webkit-box;
   display: -ms-flexbox;

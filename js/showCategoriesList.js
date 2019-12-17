@@ -4,6 +4,8 @@ let categoriesData = [];
 let productsData = [];
 let selectProduct = {};
 let commentsData = [];
+let checkedCateg = [];
+let changedCateg = [];
 
 const setDefaultData = () => {
   let fetchCategs = fetch('data/categories.json');

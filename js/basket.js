@@ -26,10 +26,13 @@ let notificationNotAddToCart = () => {
 let closeModal = () => {
     let modal = document.querySelector('.basket-modal-container');
     modal.style.display = 'none';
+    document.querySelector('body').classList.remove('unscroll');
+
 }
 let openBasket = () => {
     let basketContainer = document.querySelector('.basket-modal-container');
     basketContainer.style.display = 'block';
+    document.querySelector('body').classList.add('unscroll');
     showBasket();
 }
 

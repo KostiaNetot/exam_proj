@@ -3,17 +3,17 @@
 const showCategoryPage = (dataName) => {
   changePageContent('category-page-container');
   $('.box-sort-by').html(formSelect());
-
-  let checkedCategoryProds = sortArrayDataByCategory(dataName);
+  checkedCateg = sortArrayDataByCategory(dataName);
+  changedCateg = sortArrayDataByCategory(dataName);
   let categoryPic = document.getElementById('category-main-pic');
   let imgPath = getValueFromArr(categoriesData, dataName, 'picture');
   categoryPic.src = imgPath;
   $('#breadcrumb-categ').html(dataName);
-  $('#prod-amount-text').html(`There are ${checkedCategoryProds.length} products`);
+  $('#prod-amount-text').html(`There are ${checkedCateg.length} products`);
 
   setViewBtns();
-  fillCategoryContainer(checkedCategoryProds, dataName);
-  setSortNFilter(checkedCategoryProds, dataName);
+  fillCategoryContainer(checkedCateg, dataName);
+  setSortNFilter(checkedCateg, dataName);
 };
 
 function setViewBtns() {
@@ -49,26 +49,26 @@ const setFilterBtn = (arr, dataName) => {
     applyFilters(arr, dataName);
   });
   $('#resetFilter').on('click', () => {
-    fillCategoryContainer(arr, dataName);
+    // fillCategoryContainer(arr, dataName);
+    showCategoryPage(dataName);
   });
 };
 
 const applyFilters = (arr, data) => {
-  let filteredArr = [];
   let inputs = document.forms['filter-colors'].querySelectorAll('input');
   let colorValues = [];
   let priceDiapason = $('#slider-range').slider('values');
+
   [].forEach.call(inputs, (elem) => {
     if (elem.checked) {
       colorValues.push(elem.value);
     }
   });
-  arr.forEach((obj) => {
-    if ( (colorValues.indexOf(obj.color) !== -1) && (obj.price >= priceDiapason[0] && obj.price <= priceDiapason[1]) ) {
-      filteredArr.push(obj);
-    }
+
+  changedCateg = changedCateg.filter((obj) => {
+    return (colorValues.indexOf(obj.color) !== -1) && (obj.price >= priceDiapason[0] && obj.price <= priceDiapason[1]);
   });
-  fillByFiltered(filteredArr);
+  fillByFiltered(changedCateg);
 };
 
 const fillByFiltered = (arr) => {
@@ -116,27 +116,26 @@ const checkSelectSort = (arr) => {
   });
   let selectSort = document.forms['sort-by-form']['sort-by'];
   selectSort.addEventListener('change', function () {
-    checkSelectValue(selectSort.value, arr, defArr);
+    checkSelectValue(selectSort.value, arr);
   })
 };
 
-const checkSelectValue = (val, arr, defArr) => {
-  let sortedArr;
+const checkSelectValue = (val, arr) => {
   switch (val) {
     case 'low-high':
-      sortedArr = arr.sort((a, b) => {
+      changedCateg = changedCateg.sort((a, b) => {
         return a.price - b.price;
       });
-      fillCategoryContainer(sortedArr);
+      fillByFiltered(changedCateg);
       break;
     case 'high-low':
-      sortedArr = arr.sort((a, b) => {
+      changedCateg = changedCateg.sort((a, b) => {
         return a.price - b.price;
       });
-      fillCategoryContainer(sortedArr.reverse());
+      fillByFiltered(changedCateg.reverse());
       break;
     case 'a-z':
-      sortedArr = arr.sort((a, b) => {
+      changedCateg = changedCateg.sort((a, b) => {
         let nameA = a.name.toLowerCase(),
           nameB = b.name.toLowerCase();
         if (nameA < nameB) {
@@ -147,10 +146,10 @@ const checkSelectValue = (val, arr, defArr) => {
         }
         return 0;
       });
-      fillCategoryContainer(sortedArr);
+      fillByFiltered(changedCateg);
       break;
     case 'z-a':
-      sortedArr = arr.sort((a, b) => {
+      changedCateg = changedCateg.sort((a, b) => {
         let nameA = a.name.toLowerCase(),
           nameB = b.name.toLowerCase();
         if (nameA < nameB) {
@@ -161,10 +160,10 @@ const checkSelectValue = (val, arr, defArr) => {
         }
         return 0;
       });
-      fillCategoryContainer(sortedArr.reverse());
+      fillByFiltered(changedCateg.reverse());
       break;
     case 'relevance':
-      fillCategoryContainer(defArr);
+      fillByFiltered(checkedCateg);
       break;
   }
 };

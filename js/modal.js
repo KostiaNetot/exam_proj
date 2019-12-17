@@ -1,4 +1,4 @@
-document.querySelectorAll('.reg-btn').forEach((btn) => {
+document.querySelectorAll('.subscribe').forEach((btn) => {
     btn.onclick = () =>{
         document.querySelector('.modal-container-email').style.display = 'block';
     }
