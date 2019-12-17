@@ -1,5 +1,16 @@
 'use strict';
 
+const handlerItems = () => {
+  $('.item-name').off('click').on('click', function () {
+    let itemId = $(this).data('id');
+    findSelectedProductNumber(String(itemId));
+  });
+  $('.img-item-wrap').off('click').on('click', function () {
+    let itemId = $(this).data('id');
+    findSelectedProductNumber(String(itemId));
+  });
+};
+
 const showCategoryPage = (dataName) => {
   filtered = false;
   changePageContent('category-page-container');
@@ -93,6 +104,7 @@ const fillByFiltered = (arr) => {
   arr.forEach((obj) => {
     categProdWrapper.append(createProdItemWrapper(obj, cardClassName));
   });
+  handlerItems();
 };
 
 const getMaxPrice = (arr) => {
@@ -195,15 +207,7 @@ const fillCategoryContainer = (arr, dataName) => {
     setHandler(item);
   });
   setColorFilter(colorsCategory, arr, dataName);
-
-  $('.item-name').off('click').on('click', function () {
-    let itemId = $(this).data('id');
-    findSelectedProductNumber(String(itemId));
-  });
-  $('.img-item-wrap').off('click').on('click', function () {
-    let itemId = $(this).data('id');
-    findSelectedProductNumber(String(itemId));
-  });
+  handlerItems();
 };
 
 const setHandler = (item) => {

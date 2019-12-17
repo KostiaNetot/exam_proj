@@ -10,7 +10,22 @@
     "owl.carousel2": "^2.2.1",
     "popper.js": "^1.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "gulp-uglify": "^3.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-filesize": "0.0.6",
+    "gulp-imagemin": "^6.2.0",
+    "imagemin-pngquant": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
