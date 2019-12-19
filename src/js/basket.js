@@ -342,8 +342,9 @@ let confirmOder = () => {
         formData.append("address", address);
         formData.append("delivery", delivery);
         formData.append("delivery", delivery);
+
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "index.html");
+        xhr.open("POST", "data.php");
         xhr.send(formData);
 
         document.querySelector('.right-bsk-50').innerHTML = `<div class="for-processing"><div class="processingorder">Your order has been sent for processing.</div></div>`;
