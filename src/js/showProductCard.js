@@ -212,7 +212,6 @@ $('#btnCom').off('click').on('click', function () {
 let addCommentsToLOcalStorage = () => {
    let jsonComments = JSON.stringify(commentsData);
    localStorage.setItem('comments', jsonComments);
-   console.log(jsonComments);
 }
 
 let validationComments = (value, id, text) => {
